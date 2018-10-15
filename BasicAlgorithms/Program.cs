@@ -255,13 +255,59 @@ namespace BasicAlgorithms
             //Console.WriteLine(Ex45(10, 20));
             //Console.WriteLine(Ex45(21, 220));
 
-            // 46. Write a C# Sharp program to check whether a given string starts with "F" or ends with "B". If the string starts with "F" return "Fizz" and return "Buzz" if it ends with "B" 
-            // If the string starts with "F" and ends with "B" return "FizzBuzz". In other cases return the original string.
-            Console.WriteLine(Ex46("Founder"));
-            Console.WriteLine(Ex46("founder"));
-            Console.WriteLine(Ex46("club"));
-            Console.WriteLine(Ex46("forb"));
+            //// 46. Write a C# Sharp program to check whether a given string starts with "F" or ends with "B". If the string starts with "F" return "Fizz" and return "Buzz" if it ends with "B" 
+            //// If the string starts with "F" and ends with "B" return "FizzBuzz". In other cases return the original string.
+            //Console.WriteLine(Ex46("Founder"));
+            //Console.WriteLine(Ex46("founder"));
+            //Console.WriteLine(Ex46("club"));
+            //Console.WriteLine(Ex46("forb"));
 
+            //// 47. Write a C# Sharp program to check if it is possible to add two integers to get the third integer from three given integers.
+            //Console.WriteLine(Ex47(1, 2, 3));
+            //Console.WriteLine(Ex47(4, 5, 6));
+            //Console.WriteLine(Ex47(-1, 1, 0));
+
+            //// 48. Write a C# Sharp program to check if y is greater than x, and z is greater than y from three given integers x,y,z.
+            //Console.WriteLine(Ex48(1, 2, 3));
+            //Console.WriteLine(Ex48(4, 5, 6));
+            //Console.WriteLine(Ex48(-1, 1, 0));
+
+            //// 49. Write a C# Sharp program to check if three given numbers are in strict increasing order, such as 4 7 15, or 45, 56, 67, but not 4 ,5, 8 or 6, 6, 8.
+            //// However,if a fourth parameter is true, equality is allowed, such as 6, 6, 8 or 7, 7, 7.
+            //Console.WriteLine(Ex49(1, 2, 3, false));
+            //Console.WriteLine(Ex49(1, 2, 3, true));
+            //Console.WriteLine(Ex49(10, 2, 30, false));
+            //Console.WriteLine(Ex49(10, 10, 30, true));
+
+            //// 50. Write a C# Sharp program to check if two or more non-negative given integers have the same rightmost digit.
+            //Console.WriteLine(Ex50(11, 21, 31));
+            //Console.WriteLine(Ex50(11, 22, 31));
+            //Console.WriteLine(Ex50(11, 22, 33));
+            //Console.WriteLine(Ex50(11, 257, 9001));
+
+            //// 51. Write a C# Sharp program to check three given integers and return true if one of them is 20 or more less than one of the others.
+            //Console.WriteLine(Ex51(11, 21, 31));
+            //Console.WriteLine(Ex51(11, 22, 31));
+            //Console.WriteLine(Ex51(10, 20, 15));
+
+            //// 52. Write a C# Sharp program to find the larger from two given integers. However if the two integers have the same remainder when divided by 7, 
+            //// then return the smaller integer. If the two integers are the same, return 0.
+            //Console.WriteLine(Ex52(11, 21));
+            //Console.WriteLine(Ex52(11, 20));
+            //Console.WriteLine(Ex52(10, 10));
+
+            //// 53. Write a C# Sharp program to check two given integers, each in the range 10..99. 
+            //// Return true if a digit appears in both numbers, such as the 3 in 13 and 33.
+            //Console.WriteLine(Ex53(13, 33));
+            //Console.WriteLine(Ex53(11, 21));
+            //Console.WriteLine(Ex53(11, 20));
+            //Console.WriteLine(Ex53(10, 10));
+
+            // 54. Write a C# Sharp program to compute the sum of two given non-negative integers x and y as long as the sum has the same number of digits as x. 
+            // If the sum has more digits than x then return x without y.
+            Console.WriteLine(Ex54(4, 5));
+            Console.WriteLine(Ex54(7, 4));
+            Console.WriteLine(Ex54(10, 10));
 
 
             Console.ReadLine();
@@ -553,6 +599,57 @@ namespace BasicAlgorithms
             if (yourString.StartsWith("F") && yourString.EndsWith("B")) return "FizzBuzz";
             if (yourString.StartsWith("F")) return "Fizz";
             return yourString.StartsWith("B") ? "Buzz" : yourString;
+        }
+        private static bool Ex47(int n1, int n2, int n3)
+        {
+            return n1 == n2 + n3 || n2 == n1 + n3 || n3 == n1 + n2;
+        }
+        private static bool Ex48(int x, int y, int z)
+        {
+            return y > x && z > y;
+        }
+        private static bool Ex49(int x, int y, int z, bool allowEquality)
+        {
+            return allowEquality ? x <= y && y <= z : x < y && y < z;
+        }
+        private static bool Ex50(params int[] intArray)
+        {
+            string numberAsString = null, tmp = null;
+            if (intArray.Length <= 1) return false;
+
+            numberAsString = intArray[0].ToString();
+            numberAsString = numberAsString.Substring(numberAsString.Length - 1);
+
+            for (int i = 1; i < intArray.Length; i++)
+            {
+                tmp = intArray[i].ToString();
+                tmp = tmp.Substring(tmp.Length - 1);
+                if (numberAsString == tmp) return true;
+            }
+
+            return false;
+        }
+        private static bool Ex51(int x, int y, int z)
+        {
+            int limit = 20;
+            return Math.Abs(x - y) >= limit || Math.Abs(x - z) >= limit || Math.Abs(y - z) >= limit;
+        }
+        private static int Ex52(int x, int y)
+        {
+            int n = 7;
+            if (x == y) return 0;
+            return x % n == y % n ? Math.Min(x, y) : Math.Max(x, y);
+        }
+        private static bool Ex53(int x, int y)
+        {
+            if (Math.Min(x, y) < 10 || Math.Max(x, y) > 99) return false;
+            string str1 = x.ToString(), str2 = y.ToString();
+            return str2.Contains(str1.Substring(0, 1)) || str2.Contains(str1.Substring(1, 1));
+        }
+        private static int Ex54(int x, int y)
+        {
+            int n = x + y;
+            return n.ToString().Length == x.ToString().Length ? n : x;
         }
     }
 }
