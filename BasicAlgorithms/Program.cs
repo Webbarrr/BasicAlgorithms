@@ -138,11 +138,37 @@ namespace BasicAlgorithms
             //Console.WriteLine(Ex23(7, 87));
             //Console.WriteLine(Ex23(12, 45));
 
-            // 24. Write a C# Sharp program to convert the last 3 characters of a given string in upper case. If the length of the string has less than 3 then uppercase all the characters.
-            Console.WriteLine(Ex24("Python"));
-            Console.WriteLine(Ex24("Javascript"));
-            Console.WriteLine(Ex24("js"));
-            Console.WriteLine(Ex24("PHP"));
+            //// 24. Write a C# Sharp program to convert the last 3 characters of a given string in upper case. If the length of the string has less than 3 then uppercase all the characters.
+            //Console.WriteLine(Ex24("Python"));
+            //Console.WriteLine(Ex24("Javascript"));
+            //Console.WriteLine(Ex24("js"));
+            //Console.WriteLine(Ex24("PHP"));
+
+            //// 25. Write a C# Sharp program to create a new string which is n (non-negative integer) copies of a given string.
+            //Console.WriteLine(Ex25("JS", 2));
+            //Console.WriteLine(Ex25("JS", 3));
+            //Console.WriteLine(Ex25("JS", 1));
+
+            //// 26. Write a C# Sharp program to create a new string which is n (non-negative integer) copies of the the first 3 characters of a given string. 
+            //// If the length of the given string is less than 3 then return n copies of the string.
+            //Console.WriteLine(Ex26("Python", 2));
+            //Console.WriteLine(Ex26("Python", 3));
+            //Console.WriteLine(Ex26("JS", 3));
+
+            //// 27. Write a C# Sharp program to count the string "aa" in a given string and assume "aaa" contains two "aa".
+            //Console.WriteLine(Ex27("bbaaccaag"));
+            //Console.WriteLine(Ex27("jjkiaaasew"));
+            //Console.WriteLine(Ex27("JSaaakoiaa"));
+
+            //// 28. Write a C# Sharp program to check if the first appearance of "a" in a given string is immediately followed by another "a".
+            //Console.WriteLine(Ex28("caabb"));
+            //Console.WriteLine(Ex28("babaaba"));
+            //Console.WriteLine(Ex28("aaaaa"));
+
+            // 29. Write a C# Sharp program to create a new string made of every other character starting with the first from a given string.
+            Console.WriteLine(Ex29("Python"));
+            Console.WriteLine(Ex29("PHP"));
+            Console.WriteLine(Ex29("JS"));
 
 
 
@@ -291,6 +317,40 @@ namespace BasicAlgorithms
             return (len < size) ? yourString.ToUpper()
                 : yourString.Substring(0, len - size) + yourString.Substring(len - size, size).ToUpper();
         }
-
+        private static string Ex25(string yourString, int n)
+        {
+            StringBuilder retVal = new StringBuilder();
+            for (int i = 0; i < n; i++) retVal.Append(yourString);
+            return retVal.ToString();
+        }
+        private static string Ex26(string yourString, int n)
+        {
+            int len = 3;
+            StringBuilder retVal = new StringBuilder();
+            if (yourString.Length < len) for (int i = 0; i < n; i++) retVal.Append(yourString);
+            else
+            {
+                string first = yourString.Substring(0, len);
+                for (int i = 0; i < n; i++) retVal.Append(first);
+            }
+            return retVal.ToString();
+        }
+        private static int Ex27(string yourString)
+        {
+            int retVal = 0, len = yourString.Length - 1;
+            for (int i = 0; i < len; i++) if (yourString.Substring(i, 2) == "aa") retVal++;
+            return retVal;
+        }
+        private static bool Ex28(string yourString)
+        {
+            return yourString.ToLower().Substring(yourString.IndexOf("a"), 2) == "aa";
+        }
+        private static string Ex29(string yourString)
+        {
+            int length = yourString.Length;
+            StringBuilder retVal = new StringBuilder();
+            for (int i = 0; i < length; i+=2) retVal.Append(yourString.Substring(i, 1));
+            return retVal.ToString();
+        }
     }
 }
