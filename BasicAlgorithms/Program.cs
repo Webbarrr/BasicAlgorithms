@@ -238,10 +238,29 @@ namespace BasicAlgorithms
             //Console.WriteLine(Ex42(27));
             //Console.WriteLine(Ex42(41));
 
-            // 43. Write a C# Sharp program to check if a given non-negative given number is a multiple of 3 or 7, but not both.
-            Console.WriteLine(Ex43(3));
-            Console.WriteLine(Ex43(7));
-            Console.WriteLine(Ex43(21));
+            //// 43. Write a C# Sharp program to check if a given non-negative given number is a multiple of 3 or 7, but not both.
+            //Console.WriteLine(Ex43(3));
+            //Console.WriteLine(Ex43(7));
+            //Console.WriteLine(Ex43(21));
+
+            //// 44. Write a C# Sharp program to check if a given number is within 2 of a multiple of 10.
+            //Console.WriteLine(Ex44(3));
+            //Console.WriteLine(Ex44(7));
+            //Console.WriteLine(Ex44(8));
+            //Console.WriteLine(Ex44(21));
+
+            //// 45. Write a C# Sharp program to compute the sum of the two given integers. If one of the given integer value is in the range 10..20 inclusive return 18.
+            //Console.WriteLine(Ex45(3, 7));
+            //Console.WriteLine(Ex45(10, 11));
+            //Console.WriteLine(Ex45(10, 20));
+            //Console.WriteLine(Ex45(21, 220));
+
+            // 46. Write a C# Sharp program to check whether a given string starts with "F" or ends with "B". If the string starts with "F" return "Fizz" and return "Buzz" if it ends with "B" 
+            // If the string starts with "F" and ends with "B" return "FizzBuzz". In other cases return the original string.
+            Console.WriteLine(Ex46("Founder"));
+            Console.WriteLine(Ex46("founder"));
+            Console.WriteLine(Ex46("club"));
+            Console.WriteLine(Ex46("forb"));
 
 
 
@@ -519,6 +538,21 @@ namespace BasicAlgorithms
             int lower = 3, upper = 7;
             return n % lower == 0 && n % upper == 0 ? false
                 : n % lower == 0 || n % upper == 0;
+        }
+        private static bool Ex44(int n)
+        {
+            return n % 10 <= 2 || n % 10 >= 8;
+        }
+        private static int Ex45(int num1, int num2)
+        {
+            int lower = 10, upper = 20;
+            return (num1 >= lower && num1 <= upper) || (num2 >= lower && num2 <= upper) ? 18 : num1 + num2;
+        }
+        private static string Ex46(string yourString)
+        {
+            if (yourString.StartsWith("F") && yourString.EndsWith("B")) return "FizzBuzz";
+            if (yourString.StartsWith("F")) return "Fizz";
+            return yourString.StartsWith("B") ? "Buzz" : yourString;
         }
     }
 }
