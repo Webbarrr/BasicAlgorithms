@@ -170,12 +170,79 @@ namespace BasicAlgorithms
             //Console.WriteLine(Ex29("PHP"));
             //Console.WriteLine(Ex29("JS"));
 
-            // 30. Write a C# Sharp program to create a string like "aababcabcd" from a given string "abcd".
-            Console.WriteLine(Ex30("abcd"));
-            Console.WriteLine(Ex30("abc"));
-            Console.WriteLine(Ex30("a"));
+            //// 30. Write a C# Sharp program to create a string like "aababcabcd" from a given string "abcd".
+            //Console.WriteLine(Ex30("abcd"));
+            //Console.WriteLine(Ex30("abc"));
+            //Console.WriteLine(Ex30("a"));
 
-            // 
+            //// 31. Write a C# Sharp program to count a substring of length 2 appears in a given string and also as the last 2 characters of the string. Do not count the end substring.
+            //Console.WriteLine(Ex31("abcdsab"));
+            //Console.WriteLine(Ex31("abcdabab"));
+            //Console.WriteLine(Ex31("abcabdabab"));
+            //Console.WriteLine(Ex31("abcabd"));
+
+            //// 32. Write a C# Sharp program to check a specified number is preset in a given array of integers.
+            //Console.WriteLine(Ex32(new[] { 1, 2, 9, 3 }, 3));
+            //Console.WriteLine(Ex32(new[] { 1, 2, 2, 3 }, 2));
+            //Console.WriteLine(Ex32(new[] { 1, 2, 2, 3 }, 9));
+
+            //// 33. Write a C# Sharp program to check if one of the first 4 elements in an array of integers is equal to a given element.
+            //Console.WriteLine(Ex33(new[] { 1, 2, 9, 3 }, 3));
+            //Console.WriteLine(Ex33(new[] { 1, 2, 3, 4, 5, 6 }, 2));
+            //Console.WriteLine(Ex33(new[] { 1, 2, 2, 3 }, 9));
+
+            //// 34. Write a C# Sharp program to check whether the sequence of numbers 1, 2, 3 appears in a given array of integers somewhere.
+            //Console.WriteLine(Ex34(new[] { 1, 1, 2, 3, 1 }));
+            //Console.WriteLine(Ex34(new[] { 1, 1, 2, 4, 1 }));
+            //Console.WriteLine(Ex34(new[] { 1, 1, 2, 1, 2, 3 }));
+
+            //// 35. Write a C# Sharp program to compare two given strings and return the number of the positions where they contain the same length 2 substring.
+            //Console.WriteLine(Ex35("abcdefgh", "abijsklm"));
+            //Console.WriteLine(Ex35("abcde", "osuefrcd"));
+            //Console.WriteLine(Ex35("pqrstuvwx", "pqkdiewx"));
+
+            //// 36. Write a C# Sharp program to create a new string from a given string where a specified character have been removed except starting and ending position of the given string
+            //Console.WriteLine(Ex36("xxHxix", "x"));
+            //Console.WriteLine(Ex36("abxdddca", "a"));
+            //Console.WriteLine(Ex36("xabjbhtrb", "b"));
+
+            //// 37. Write a C# Sharp program to create a new string of the characters at indexes 0,1, 4,5, 8,9 ... from a given string.
+            //Console.WriteLine(Ex37("Python"));
+            //Console.WriteLine(Ex37("JavaScript"));
+            //Console.WriteLine(Ex37("HTML"));
+
+            //// 38. Write a C# Sharp program to count the number of two 5's are next to each other in an array of integers. Also count the situation where the second 5 is actually a 6.
+            //Console.WriteLine(Ex38(new[] { 5, 5, 2 }));
+            //Console.WriteLine(Ex38(new[] { 5, 5, 2, 5, 5 }));
+            //Console.WriteLine(Ex38(new[] { 5, 6, 2, 9 }));
+
+            //// 39. Write a C# Sharp program to check if a triple is presents in an array of integers or not. If a value appears three times in a row in an array it is called a triple.
+            //Console.WriteLine(Ex39(new[] { 1, 1, 2, 2, 1 }));
+            //Console.WriteLine(Ex39(new[] { 1, 1, 2, 1, 2, 3 }));
+            //Console.WriteLine(Ex39(new[] { 1, 1, 1, 2, 2, 2, 1 }));
+
+            //// 40. Write a C# Sharp program to compute the sum of the two given integers. If the sum is in the range 10..20 inclusive return 30.
+            //Console.WriteLine(Ex40(12, 17));
+            //Console.WriteLine(Ex40(2, 17));
+            //Console.WriteLine(Ex40(22, 17));
+            //Console.WriteLine(Ex40(20, 0));
+
+            //// 41. Write a C# Sharp program that accept two integers and return true if either one is 5 or their sum or difference is 5.
+            //Console.WriteLine(Ex41(5, 4));
+            //Console.WriteLine(Ex41(4, 3));
+            //Console.WriteLine(Ex41(1, 4));
+
+            //// 42. Write a C# Sharp program to test if a given non-negative number is a multiple of 13 or it is one more than a multiple of 13.
+            //Console.WriteLine(Ex42(13));
+            //Console.WriteLine(Ex42(14));
+            //Console.WriteLine(Ex42(27));
+            //Console.WriteLine(Ex42(41));
+
+            // 43. Write a C# Sharp program to check if a given non-negative given number is a multiple of 3 or 7, but not both.
+            Console.WriteLine(Ex43(3));
+            Console.WriteLine(Ex43(7));
+            Console.WriteLine(Ex43(21));
+
 
 
             Console.ReadLine();
@@ -367,6 +434,91 @@ namespace BasicAlgorithms
                 retVal.Append(yourString.Substring(0, i+1));
             }
             return retVal.ToString();
+        }
+        private static int Ex31(string yourString)
+        {
+            int length = yourString.Length - 2, retVal = 0;
+            string last2 = yourString.Substring(length);
+            for (int i = 0; i < length; i++) if (yourString.Substring(i, 2) == last2) retVal++;
+            return retVal;
+        }
+        private static bool Ex32(int[] intArray, int n)
+        {
+            return intArray.Contains(n);
+        }
+        private static bool Ex33(int[] intArray, int n)
+        {
+            return intArray.Length < 4 ? intArray.Contains(n) : intArray.Take(4).Contains(n);
+        }
+        private static bool Ex34(int[] intArray)
+        {
+            int length = intArray.Length - 1;
+            for (int i = 0; i < length; i++) if (intArray[i] == 1 && intArray[i + 1] == 2 && intArray[i + 2] == 3) return true;
+            return false;
+        }
+        private static int Ex35(string str1, string str2)
+        {
+            int str1Len = str1.Length - 1, str2Len = str2.Length - 1, retVal = 0;
+            for (int i = 0; i < str1Len; i++)
+            {
+                string mySubString = str1.Substring(i, 2);
+                for (int n = 0; n < str2Len; n++) if (mySubString == str2.Substring(n, 2)) retVal++;
+            }
+            return retVal;
+        }
+        private static string Ex36(string yourString, string toRemove)
+        {
+            int length = yourString.Length - 1;
+            return yourString.Substring(0, 1) + yourString.Substring(1, length - 1).Replace(toRemove, null) + yourString.Substring(length);
+        }
+        private static string Ex37(string yourString)
+        {
+            int[] positions = { 0, 1, 4, 5, 8, 9 };
+            StringBuilder retVal = new StringBuilder();
+
+            foreach (int num in positions)
+            {
+                if (num > yourString.Length - 1) break;
+                retVal.Append(yourString.Substring(num, 1));
+            }
+            return retVal.ToString();
+        }
+        private static int Ex38(int[] intArray)
+        {
+            int retVal = 0, length = intArray.Length - 1;
+            for (int i = 0; i < length; i++) if (intArray[i] == 5 && (intArray[i + 1] == 5 || intArray[i + 1] == 6)) retVal++;
+            return retVal;
+        }
+        private static bool Ex39(int[] intArray)
+        {
+            int length = intArray.Length - 1, n = 0;
+            for (int i = 0; i < length; i++)
+            {
+                n = intArray[i];
+                if (n == intArray[i + 1] && n == intArray[i + 2]) return true;
+            }
+            return false;
+        }
+        private static int Ex40(int n1, int n2)
+        {
+            int retVal = n1 + n2;
+            return retVal >= 10 && retVal <= 10 ? 30 : retVal;
+        }
+        private static bool Ex41(int n1, int n2)
+        {
+            int n = 5;
+            return n1 == n || n2 == n|| n1 + n2 == n || Math.Abs(n1 - n2) == n;
+        }
+        private static bool Ex42(int n)
+        {
+            int multiple = 13;
+            return (n % multiple == 0) || ((n - 1) % multiple) == 0;
+        }
+        private static bool Ex43(int n)
+        {
+            int lower = 3, upper = 7;
+            return n % lower == 0 && n % upper == 0 ? false
+                : n % lower == 0 || n % upper == 0;
         }
     }
 }
