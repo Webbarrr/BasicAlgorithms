@@ -165,11 +165,17 @@ namespace BasicAlgorithms
             //Console.WriteLine(Ex28("babaaba"));
             //Console.WriteLine(Ex28("aaaaa"));
 
-            // 29. Write a C# Sharp program to create a new string made of every other character starting with the first from a given string.
-            Console.WriteLine(Ex29("Python"));
-            Console.WriteLine(Ex29("PHP"));
-            Console.WriteLine(Ex29("JS"));
+            //// 29. Write a C# Sharp program to create a new string made of every other character starting with the first from a given string.
+            //Console.WriteLine(Ex29("Python"));
+            //Console.WriteLine(Ex29("PHP"));
+            //Console.WriteLine(Ex29("JS"));
 
+            // 30. Write a C# Sharp program to create a string like "aababcabcd" from a given string "abcd".
+            Console.WriteLine(Ex30("abcd"));
+            Console.WriteLine(Ex30("abc"));
+            Console.WriteLine(Ex30("a"));
+
+            // 
 
 
             Console.ReadLine();
@@ -350,6 +356,16 @@ namespace BasicAlgorithms
             int length = yourString.Length;
             StringBuilder retVal = new StringBuilder();
             for (int i = 0; i < length; i+=2) retVal.Append(yourString.Substring(i, 1));
+            return retVal.ToString();
+        }
+        private static string Ex30(string yourString)
+        {
+            int length = yourString.Length;
+            StringBuilder retVal = new StringBuilder();
+            for (int i = 0; i < length; i++)
+            {
+                retVal.Append(yourString.Substring(0, i+1));
+            }
             return retVal.ToString();
         }
     }
