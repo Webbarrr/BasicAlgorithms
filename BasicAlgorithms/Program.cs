@@ -114,11 +114,36 @@ namespace BasicAlgorithms
             //Console.WriteLine(Ex19(95, 95));
             //Console.WriteLine(Ex19(99, 70));
 
-            // 20. Write a C# Sharp program to check whether two given integers are in the range 40..50 inclusive, or they are both in the range 50..60 inclusive.
-            Console.WriteLine(Ex20(78, 95));
-            Console.WriteLine(Ex20(25, 35));
-            Console.WriteLine(Ex20(40, 50));
-            Console.WriteLine(Ex20(55, 60));
+            //// 20. Write a C# Sharp program to check whether two given integers are in the range 40..50 inclusive, or they are both in the range 50..60 inclusive.
+            //Console.WriteLine(Ex20(78, 95));
+            //Console.WriteLine(Ex20(25, 35));
+            //Console.WriteLine(Ex20(40, 50));
+            //Console.WriteLine(Ex20(55, 60));
+
+            //// 21. Write a C# Sharp program to find the larger value from two positive integer values that is in the range 20..30 inclusive, or return 0 if neither is in that range.
+            //Console.WriteLine(Ex21(78, 95));
+            //Console.WriteLine(Ex21(20, 30));
+            //Console.WriteLine(Ex21(21, 25));
+            //Console.WriteLine(Ex21(28, 28));
+
+            //// 22. Write a C# Sharp program to check if a given string contains between 2 and 4 'z' character.
+            //Console.WriteLine(Ex22("frizz"));
+            //Console.WriteLine(Ex22("zane"));
+            //Console.WriteLine(Ex22("Zazz"));
+            //Console.WriteLine(Ex22("false"));
+
+            //// 23. Write a C# Sharp program to check if two given non-negative integers have the same last digit.
+            //Console.WriteLine(Ex23(123, 456));
+            //Console.WriteLine(Ex23(12, 512));
+            //Console.WriteLine(Ex23(7, 87));
+            //Console.WriteLine(Ex23(12, 45));
+
+            // 24. Write a C# Sharp program to convert the last 3 characters of a given string in upper case. If the length of the string has less than 3 then uppercase all the characters.
+            Console.WriteLine(Ex24("Python"));
+            Console.WriteLine(Ex24("Javascript"));
+            Console.WriteLine(Ex24("js"));
+            Console.WriteLine(Ex24("PHP"));
+
 
 
             Console.ReadLine();
@@ -244,5 +269,28 @@ namespace BasicAlgorithms
                 || (n1 >= lower2 && n2 <= lower2 + increment) || (n2 >= lower2 && n1 <= lower2 + increment)
                 ? true : false;
         }
+        private static int Ex21(int n1, int n2)
+        {
+            int lower = 20, max = 30;
+            return (n1 >= lower && n1 <= max) || (n2 >= lower && n2 <= max) ? Math.Max(n1, n2) : 0;
+        }
+        private static bool Ex22(string yourString)
+        {
+            string toStrip = "z";
+            return (yourString.Replace(toStrip, null).Length <= yourString.Length - 2) || (yourString.Replace(toStrip, null).Length <= yourString.Length - 4);
+        }
+        private static bool Ex23(int n1, int n2)
+        {
+            if (n1 < 0 || n2 < 0) return false;
+            char[] n1Array = n1.ToString().ToCharArray(), n2Array = n2.ToString().ToCharArray();
+            return n1Array[n1Array.Length - 1] == n2Array[n2Array.Length - 1];
+        }
+        private static string Ex24(string yourString)
+        {
+            int len = yourString.Length, size = 3;
+            return (len < size) ? yourString.ToUpper()
+                : yourString.Substring(0, len - size) + yourString.Substring(len - size, size).ToUpper();
+        }
+
     }
 }
