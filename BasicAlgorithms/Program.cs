@@ -321,12 +321,66 @@ namespace BasicAlgorithms
             //Console.WriteLine(Ex56(10, 13, 12));
             //Console.WriteLine(Ex56(13, 12, 18));
 
-            // 57. Write a C# Sharp program to compute the sum of the three given integers. However, if any of the values is in the range 10..20 inclusive then that value counts as 0, except 13 and 17.
-            Console.WriteLine(Ex57(4, 5, 7));
-            Console.WriteLine(Ex57(7, 4, 12));
-            Console.WriteLine(Ex57(10, 13, 12));
-            Console.WriteLine(Ex57(17, 12, 18));
+            //// 57. Write a C# Sharp program to compute the sum of the three given integers. However, if any of the values is in the range 10..20 inclusive then that value counts as 0, except 13 and 17.
+            //Console.WriteLine(Ex57(4, 5, 7));
+            //Console.WriteLine(Ex57(7, 4, 12));
+            //Console.WriteLine(Ex57(10, 13, 12));
+            //Console.WriteLine(Ex57(17, 12, 18));
 
+            //// 58. Write a C# Sharp program to check two given integers and return the value whichever value is nearest to 13 without going over. Return 0 if both numbers go over
+            //Console.WriteLine(Ex58(4, 5));
+            //Console.WriteLine(Ex58(7, 12));
+            //Console.WriteLine(Ex58(10, 13));
+            //Console.WriteLine(Ex58(17, 33));
+            //Console.WriteLine(Ex58(17, 33));
+
+            //// 59. Write a C# Sharp program to check three given integers (small, medium and large) and return true if the difference between small and medium and the difference between medium and large is same. 
+            //Console.WriteLine(Ex59(4, 5, 6));
+            //Console.WriteLine(Ex59(7, 12, 13));
+            //Console.WriteLine(Ex59(-1, 0, 1));
+
+            //// 60. Write a C# Sharp program to create a new string using two given strings s1, s2, the format of the new string will be s1s2s2s1.
+            //Console.WriteLine(Ex60("Hi", "Hello"));
+            //Console.WriteLine(Ex60("whats", "app"));
+
+            //// 61. Write a C# Sharp program to insert a given string into middle of the another given string of length 4.
+            //Console.WriteLine(Ex61("[[]]", "Hello"));
+            //Console.WriteLine(Ex61("(())", "Hi"));
+
+            //// 62. Write a C# Sharp program to create a new string using three copies of the last two character of a given string of length atleast two.
+            //Console.WriteLine(Ex62("Hello"));
+            //Console.WriteLine(Ex62("Hi"));
+
+            //// 63. Write a C# Sharp program to create a new string using first two characters of a given string. If the string length is less than 2 then return the original string.. 
+            //Console.WriteLine(Ex63("Hello"));
+            //Console.WriteLine(Ex63("Hi"));
+            //Console.WriteLine(Ex63("H"));
+            //Console.WriteLine(Ex63(" "));
+
+            //// 64. Write a C# Sharp program to create a new string of the first half of a given string of even length.
+            //Console.WriteLine(Ex64("Hello"));
+            //Console.WriteLine(Ex64("Hi"));
+
+            //// 65. Write a C# Sharp program to create a new string without the first and last character of a given string of length atleast two.
+            //Console.WriteLine(Ex65("Hello"));
+            //Console.WriteLine(Ex65("Hi"));
+            //Console.WriteLine(Ex65("Python"));
+
+            //// 66. Write a C# Sharp program to create a new string from two given string one is shorter and another is longer. The format of the new string will be long string + short string + long string.
+            //Console.WriteLine(Ex66("Hello", "Hi"));
+            //Console.WriteLine(Ex66("JS", "Python"));
+
+            //// 67. Write a C# Sharp program to concat two given string of length atleast 1, after removing their first character.
+            //Console.WriteLine(Ex67("Hello", "Hi"));
+            //Console.WriteLine(Ex67("JS", "Python"));
+
+            //// 68. Write a C# Sharp program to move the first two characters to the end of a given string of length at least two.
+            //Console.WriteLine(Ex68("Hello"));
+            //Console.WriteLine(Ex68("JS"));
+
+            // 69. Write a C# Sharp program to move the last two characters to the start of a given string of length at least two.
+            Console.WriteLine(Ex69("Hello"));
+            Console.WriteLine(Ex69("JS"));
 
 
 
@@ -699,6 +753,57 @@ namespace BasicAlgorithms
             if (IsNInRangeOfXY(z, lower, upper) && (!allowed.Contains(z))) z = 0;
 
             return x + y + z;
+        }
+        private static int Ex58(int x, int y)
+        {
+            const int n = 13;
+            return x > n && y > n ? 0 : Math.Max(x, y);
+        }
+        private static bool Ex59(int x, int y, int z)
+        {
+            return x - y == y - z;
+        }
+        private static string Ex60(string s1, string s2)
+        {
+            return $"{s1}{s2 + s2}{s1}";
+        }
+        private static string Ex61(string yourString, string input)
+        {
+            return yourString.Substring(0, 2) + input + yourString.Substring(2);
+        }
+        private static string Ex62(string s)
+        {
+            string str = s.Substring(s.Length - 2);
+            return $"{str + str + str}";
+        }
+        private static string Ex63(string s)
+        {
+            return s.Length < 2 ? s : s.Substring(0,2);
+        }
+        private static string Ex64(string s)
+        {
+            return s.Length % 2 != 0 ? s : s.Substring(0,s.Length / 2);
+        }
+        private static string Ex65(string s)
+        {
+            return s.Length < 2 ? s : s.Substring(1, s.Length - 2);
+        }
+        private static string Ex66(string s1, string s2)
+        {
+            return s1.Length > s2.Length ? $"{s2}{s1}{s2}" : $"{s1}{s2}{s1}";
+        }
+        private static string Ex67(string s1, string s2)
+        {
+            int n = 1;
+            return s1.Substring(n) + s2.Substring(n);
+        }
+        private static string Ex68(string s)
+        {
+            return s.Substring(2) + s.Substring(0, 2);
+        }
+        private static string Ex69(string s)
+        {
+            return s.Substring(s.Length - 2) + s.Remove(s.Length - 2);
         }
     }
 }
