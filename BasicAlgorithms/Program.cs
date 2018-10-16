@@ -303,11 +303,31 @@ namespace BasicAlgorithms
             //Console.WriteLine(Ex53(11, 20));
             //Console.WriteLine(Ex53(10, 10));
 
-            // 54. Write a C# Sharp program to compute the sum of two given non-negative integers x and y as long as the sum has the same number of digits as x. 
-            // If the sum has more digits than x then return x without y.
-            Console.WriteLine(Ex54(4, 5));
-            Console.WriteLine(Ex54(7, 4));
-            Console.WriteLine(Ex54(10, 10));
+            //// 54. Write a C# Sharp program to compute the sum of two given non-negative integers x and y as long as the sum has the same number of digits as x. 
+            //// If the sum has more digits than x then return x without y.
+            //Console.WriteLine(Ex54(4, 5));
+            //Console.WriteLine(Ex54(7, 4));
+            //Console.WriteLine(Ex54(10, 10));
+
+            //// 55. Write a C# Sharp program to compute the sum of three given integers. If the two values are same return the third value.
+            //Console.WriteLine(Ex55(4, 5, 7));
+            //Console.WriteLine(Ex55(7, 4, 12));
+            //Console.WriteLine(Ex55(10, 10, 12));
+            //Console.WriteLine(Ex55(12, 12, 18));
+
+            //// 56. Write a C# Sharp program to compute the sum of the three integers. If one of the values is 13 then do not count it and its right towards the sum.
+            //Console.WriteLine(Ex56(4, 5, 7));
+            //Console.WriteLine(Ex56(7, 4, 12));
+            //Console.WriteLine(Ex56(10, 13, 12));
+            //Console.WriteLine(Ex56(13, 12, 18));
+
+            // 57. Write a C# Sharp program to compute the sum of the three given integers. However, if any of the values is in the range 10..20 inclusive then that value counts as 0, except 13 and 17.
+            Console.WriteLine(Ex57(4, 5, 7));
+            Console.WriteLine(Ex57(7, 4, 12));
+            Console.WriteLine(Ex57(10, 13, 12));
+            Console.WriteLine(Ex57(17, 12, 18));
+
+
 
 
             Console.ReadLine();
@@ -650,6 +670,35 @@ namespace BasicAlgorithms
         {
             int n = x + y;
             return n.ToString().Length == x.ToString().Length ? n : x;
+        }
+        private static int Ex55(int x, int y, int z)
+        {
+            if (x == y) return z;
+            if (x == z) return y;
+            return y == z ? x : x + y + z;
+        }
+        private static int Ex56(int x, int y, int z)
+        {
+            int n = 13;
+            if (x == n) return 0;
+            if (y == n) return x;
+            return z == n ? y + z : x + y + z;
+        }
+        private static bool IsNInRangeOfXY(int n, int x, int y, bool inclusive = true)
+        {
+            if (inclusive) return n >= x && n <= y;
+            return n > x && n < y;
+        }
+        private static int Ex57(int x, int y, int z)
+        {
+            int lower = 10, upper = 20;
+            int[] allowed = new int[2] { 13, 17 };
+
+            if (IsNInRangeOfXY(x, lower, upper) && (!allowed.Contains(x))) x = 0;
+            if (IsNInRangeOfXY(y, lower, upper) && (!allowed.Contains(y))) y = 0;
+            if (IsNInRangeOfXY(z, lower, upper) && (!allowed.Contains(z))) z = 0;
+
+            return x + y + z;
         }
     }
 }
