@@ -378,10 +378,75 @@ namespace BasicAlgorithms
             //Console.WriteLine(Ex68("Hello"));
             //Console.WriteLine(Ex68("JS"));
 
-            // 69. Write a C# Sharp program to move the last two characters to the start of a given string of length at least two.
-            Console.WriteLine(Ex69("Hello"));
-            Console.WriteLine(Ex69("JS"));
+            //// 69. Write a C# Sharp program to move the last two characters to the start of a given string of length at least two.
+            //Console.WriteLine(Ex69("Hello"));
+            //Console.WriteLine(Ex69("JS"));
 
+            //// 70. Write a C# Sharp program to create a new string without the first and last character of a given string of any length.
+            //Console.WriteLine(Ex70("Hello"));
+            //Console.WriteLine(Ex70("JS"));
+            //Console.WriteLine(Ex70(""));
+
+            //// 71. Write a C# Sharp program to create a new string using the two middle characters of a given string of even length (at least 2).
+            //Console.WriteLine(Ex71("Hello"));
+            //Console.WriteLine(Ex71("JS"));
+            //Console.WriteLine(Ex71("Python"));
+
+            //// 72. Write a C# Sharp program to check if a given string ends with "on"
+            //Console.WriteLine(Ex72("Hello"));
+            //Console.WriteLine(Ex72("Python"));
+            //Console.WriteLine(Ex72("on"));
+            //Console.WriteLine(Ex72("o"));
+
+            //// 73. Write a C# Sharp program to create a new string using the first and last n characters from a given string of length at least n.
+            //Console.WriteLine(Ex73("Hello", 1));
+            //Console.WriteLine(Ex73("Python", 2));
+            //Console.WriteLine(Ex73("on", 1));
+            //Console.WriteLine(Ex73("o", 1));
+
+            //// 74. Write a C# Sharp program to create a new string of length 2 starting at the given index of a given string.
+            //Console.WriteLine(Ex74("Hello", 1));
+            //Console.WriteLine(Ex74("Python", 2));
+            //Console.WriteLine(Ex74("on", 1));
+
+            //// 75. Write a C# Sharp program to create a new string taking 3 characters from the middle of a given string at least 3.
+            //Console.WriteLine(Ex75("Hello"));
+            //Console.WriteLine(Ex75("Python"));
+            //Console.WriteLine(Ex75("abc"));
+
+            //// 76. Write a C# Sharp program to create a new string of length 2, using first two characters of a given string. 
+            //// If the given string length is less than 2 use '#' as missing characters.
+            //Console.WriteLine(Ex76("Hello"));
+            //Console.WriteLine(Ex76("Python"));
+            //Console.WriteLine(Ex76("a"));
+            //Console.WriteLine(Ex76(""));
+
+            //// 77. Write a C# Sharp program to create a new string taking the first character from a given string and the last character from another given string. 
+            //// If the length of any given string is 0, use '#' as its missing character.
+            //Console.WriteLine(Ex77("Hello", "Hi"));
+            //Console.WriteLine(Ex77("Python", "PHP"));
+            //Console.WriteLine(Ex77("JS", "JS"));
+            //Console.WriteLine(Ex77("Csharp", ""));
+
+            //// 78. Write a C# Sharp program to concat two given strings. If there are any double character in new string then omit one character.
+            //Console.WriteLine(Ex78("Hello", "Hi"));
+            //Console.WriteLine(Ex78("Python", "PHP"));
+            //Console.WriteLine(Ex78("PHP", "PHP"));
+
+            //// 79. Write a C# Sharp program to create a new string from a given string after swapping last two characters.
+            //Console.WriteLine(Ex79("Hello"));
+            //Console.WriteLine(Ex79("Python"));
+            //Console.WriteLine(Ex79("PHP"));
+            //Console.WriteLine(Ex79("JS"));
+            //Console.WriteLine(Ex79("C"));
+
+            // 80. Write a C# Sharp program to check if a given string begins with 'abc' or 'xyz'. 
+            // If the string begins with 'abc' or 'xyz' return 'abc' or 'xyz' otherwise return the empty string.
+            Console.WriteLine(Ex80("abc"));
+            Console.WriteLine(Ex80("abcdef"));
+            Console.WriteLine(Ex80("C"));
+            Console.WriteLine(Ex80("xyz"));
+            Console.WriteLine(Ex80("xyzsder"));
 
 
             Console.ReadLine();
@@ -804,6 +869,59 @@ namespace BasicAlgorithms
         private static string Ex69(string s)
         {
             return s.Substring(s.Length - 2) + s.Remove(s.Length - 2);
+        }
+        private static string Ex70(string s)
+        {
+            return s.Length < 2 ? null : s.Substring(1, s.Length - 2);
+        }
+        private static string Ex71(string s)
+        {
+            return (s.Length % 2 != 0) || (s.Length < 3) ? null
+                : s.Substring((s.Length / 2) - 1, 2);
+        }
+        private static bool Ex72(string s)
+        {
+            return s.EndsWith("on");
+        }
+        private static string Ex73(string yourString, int lastNCharacters)
+        {
+            return yourString.Substring(0, lastNCharacters) + yourString.Substring(yourString.Length - lastNCharacters);
+        }
+        private static string Ex74(string s, int n)
+        {
+            return n + 2 <= s.Length ? s.Substring(n, 2) : s.Substring(0,2) ;
+        }
+        private static string Ex75(string s)
+        {
+            return s.Length < 4 ? s
+                : s.Substring((s.Length - 1)/ 2 - 1, 3);
+        }
+        private static string Ex76(string s)
+        {
+            return s.Length > 2 ? s.Substring(0, 2): s + "##".Substring(0, 2 - s.Length);
+        }
+        private static string Ex77(string s1, string s2)
+        {
+            string retVal;
+            if (string.IsNullOrEmpty(s1)) retVal = "#";
+            else retVal = s1[0].ToString();
+            return string.IsNullOrEmpty(s2) ? retVal + "#" : retVal + s2[s2.Length - 1].ToString();
+        }
+        private static string Ex78(string s1, string s2)
+        {
+            string retVal = s1 + s2;
+            int length = retVal.Length - 1;
+            for (int i = 1; i < length; i++) if (retVal[i].ToString() == retVal[i - 1].ToString()) retVal = retVal.Remove(i, 1);
+            return retVal;
+        }
+        private static string Ex79(string s)
+        {
+            return s.Length < 2 ? null : s.Substring(0, s.Length - 2) + s[s.Length - 1].ToString() + s.Substring(s.Length - 2, 1);
+        }
+        private static string Ex80(string s)
+        {
+            if (s.StartsWith("abc")) return "abc";
+            return s.StartsWith("xyz") ? "xyz" : string.Empty;
         }
     }
 }
