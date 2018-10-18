@@ -440,13 +440,87 @@ namespace BasicAlgorithms
             //Console.WriteLine(Ex79("JS"));
             //Console.WriteLine(Ex79("C"));
 
-            // 80. Write a C# Sharp program to check if a given string begins with 'abc' or 'xyz'. 
-            // If the string begins with 'abc' or 'xyz' return 'abc' or 'xyz' otherwise return the empty string.
-            Console.WriteLine(Ex80("abc"));
-            Console.WriteLine(Ex80("abcdef"));
-            Console.WriteLine(Ex80("C"));
-            Console.WriteLine(Ex80("xyz"));
-            Console.WriteLine(Ex80("xyzsder"));
+            //// 80. Write a C# Sharp program to check if a given string begins with 'abc' or 'xyz'. 
+            //// If the string begins with 'abc' or 'xyz' return 'abc' or 'xyz' otherwise return the empty string.
+            //Console.WriteLine(Ex80("abc"));
+            //Console.WriteLine(Ex80("abcdef"));
+            //Console.WriteLine(Ex80("C"));
+            //Console.WriteLine(Ex80("xyz"));
+            //Console.WriteLine(Ex80("xyzsder"));
+
+            //// 81. Write a C# Sharp program to check whether the first two characters and last two characters of a given string are same.
+            //Console.WriteLine(Ex81("abab"));
+            //Console.WriteLine(Ex81("abcdef"));
+            //Console.WriteLine(Ex81("xyzsderxy"));
+
+            // 82. Write a C# Sharp program to concat two given strings. If the given strings have different length remove the characters from the longer string.
+            //Console.WriteLine(Ex82("abc", "abcd"));
+            //Console.WriteLine(Ex82("Python", "Python"));
+            //Console.WriteLine(Ex82("JS", "Python"));
+
+            //// 83. Write a C# Sharp program to create a new string using 3 copies of the first 2 characters of a given string. If the length of the given string is less than 2 use the whole string.
+            //Console.WriteLine(Ex83("abc"));
+            //Console.WriteLine(Ex83("Python"));
+            //Console.WriteLine(Ex83("J"));
+
+            //// 84. Write a C# Sharp program to create a new string from a given string. If the two characters of the given string from its beginning and end are same return the given string without 
+            //// the first two characters otherwise return the original string.
+            //Console.WriteLine(Ex84("abcab"));
+            //Console.WriteLine(Ex84("Python"));
+
+            //// 85. Write a C# Sharp program to create a new string from a given string without the first two characters. Keep the first character if it is "p" and keep the second character if it is "y".
+            //Console.WriteLine(Ex85("abcab"));
+            //Console.WriteLine(Ex85("python"));
+            //Console.WriteLine(Ex85("press"));
+            //Console.WriteLine(Ex85("jython"));
+
+            //// 86. Write a C# Sharp program to create a new string from a given string without the first and last character if the first or last characters are 'a' otherwise return the original given string.
+            //Console.WriteLine(Ex86("abcab"));
+            //Console.WriteLine(Ex86("python"));
+            //Console.WriteLine(Ex86("abcda"));
+            //Console.WriteLine(Ex86("jython"));
+
+            //// 87. Write a C# Sharp program to create a new string from a given string. If the first or first two characters is 'a', return the string without those 'a' characters otherwise return the original given string.
+            //Console.WriteLine(Ex87("abcab"));
+            //Console.WriteLine(Ex87("python"));
+            //Console.WriteLine(Ex87("aacda"));
+            //Console.WriteLine(Ex87("jython"));
+
+            //// 88. Write a C# Sharp program to check a given array of integers of length 1 or more and return true if 10 appears as either first or last element in the given array.
+            //Console.WriteLine(Ex88(new[] { 10, 20, 40, 50 }));
+            //Console.WriteLine(Ex88(new[] { 5, 20, 40, 10 }));
+            //Console.WriteLine(Ex88(new[] { 10, 20, 40, 10 }));
+            //Console.WriteLine(Ex88(new[] { 12, 24, 35, 55 }));
+
+            //// 89. Write a C# Sharp program to check a given array of integers of length 1 or more and return true if the first element and the last element are equal in the given array.
+            //Console.WriteLine(Ex89(new[] { 10, 20, 40, 50 }));
+            //Console.WriteLine(Ex89(new[] { 10, 20, 40, 10 }));
+            //Console.WriteLine(Ex89(new[] { 12, 24, 35, 55 }));
+
+            //// 90. Write a C# Sharp program to check two given arrays of integers of length 1 or more and return true if they have the same first element or they have the same last element.
+            //Console.WriteLine(Ex90(new[] { 10, 20, 40, 50 }, new[] { 10, 20, 40, 50 }));
+            //Console.WriteLine(Ex90(new[] { 10, 20, 40, 50 }, new[] { 10, 20, 40, 5 }));
+            //Console.WriteLine(Ex90(new[] { 10, 20, 40, 50 }, new[] { 1, 20, 40, 5 }));
+
+            //// 91. Write a C# Sharp program to compute the sum of the elements of an given array of integers.
+            //Console.WriteLine(Ex91(new[] { 10, 20, 30, 40, 50 }));
+            //Console.WriteLine(Ex91(new[] { 10, 20, -30, -40, 50 }));
+
+            //// 92. Write a C# Sharp program to rotate the elements of a given array of integers (length 4 ) in left direction and return the new array.
+            //int[] item = Ex92(new[] { 10, 20, -30, -40 });
+            //Console.Write("Rotated array: ");
+            //foreach (var i in item) Console.Write(i.ToString() + " ");
+
+            //// 93. Write a C# Sharp program to reverse a given array of integers and length 4.
+            //int[] item = Ex93(new[] { 10, 20, -30, -40, 50 });
+            //Console.Write("Reverse array: ");
+            //foreach (var i in item) Console.Write(i.ToString() + " ");
+
+            // 94. Write a C# Sharp program to find out the maximum element between the first or last element in a given array of integers ( length 4), replace all elements with maximum element.
+            int[] item = Ex94(new[] { 10, 20, -30, -40 });
+            Console.Write("New array: ");
+            foreach (var i in item) Console.Write(i.ToString() + " ");
+
 
 
             Console.ReadLine();
@@ -706,7 +780,7 @@ namespace BasicAlgorithms
         private static int Ex40(int n1, int n2)
         {
             int retVal = n1 + n2;
-            return retVal >= 10 && retVal <= 10 ? 30 : retVal;
+            return retVal >= 10 && retVal <= 20 ? 30 : retVal;
         }
         private static bool Ex41(int n1, int n2)
         {
@@ -922,6 +996,82 @@ namespace BasicAlgorithms
         {
             if (s.StartsWith("abc")) return "abc";
             return s.StartsWith("xyz") ? "xyz" : string.Empty;
+        }
+        private static bool Ex81(string s)
+        {
+            return s.Substring(0, 2) == s.Substring(s.Length - 2);
+        }
+        private static string Ex82(string s1, string s2)
+        {
+            if (s1.Length < s2.Length) return s1 + s2.Substring(s2.Length - s1.Length);
+            return s1.Length > s2.Length ? s1.Substring(s1.Length - s2.Length) + s2 : s1 + s2;
+            
+        }
+        private static string Ex83(string s)
+        {
+            return s.Length < 2 ? s+s+s : s.Substring(0, 2) + s.Substring(0, 2) + s.Substring(0, 2);
+        }
+        private static string Ex84(string s)
+        {
+            int n = 2;
+            return s.Substring(0, n) == s.Substring(s.Length - n) ? s.Substring(n) : s;
+        }
+        private static string Ex85(string s)
+        {
+            string retVal = string.Empty;
+            if (s[0].ToString() != "p") retVal = null;
+            else retVal = s[0].ToString();
+
+            return s[1].ToString() != "y" ? retVal + s.Substring(2) : retVal + s.Substring(1);
+        }
+        private static string Ex86(string s)
+        {
+            string retVal = string.Empty, test = "a";
+            if (!s.StartsWith(test)) retVal = s.Substring(0, s.Length - 1);
+            else retVal = s.Substring(2, s.Length - 2);
+            return s.EndsWith(test) ? retVal : retVal + s.Substring(s.Length - 1);
+        }
+        private static string Ex87(string s)
+        {
+            return s.Substring(0, 2).Replace("a", null) + s.Substring(2);
+        }
+        private static bool Ex88(int[] array)
+        {
+            const int n = 10;
+            return array[0] == n || array[array.Length - 1] == n;
+        }
+        private static bool Ex89(int[] array)
+        {
+            return array[0] == array[array.Length - 1];
+        }
+        private static bool Ex90(int[] x, int[] y)
+        {
+            return x[0] == y[0] || x[x.Length - 1] == y[y.Length - 1];
+        }
+        private static int Ex91(int[] x)
+        {
+            return x.Sum();
+        }
+        private static int[] Ex92(int[] x)
+        {
+            int[] retVal = x.Skip(1).ToArray();
+            Array.Resize(ref retVal, x.Length);
+            retVal[x.Length - 1] = x[0];
+            return retVal;
+        }
+        private static int[] Ex93(int[] x)
+        {
+            int[] retVal = x;
+            Array.Reverse(retVal);
+            return retVal;
+        }
+        private static int[] Ex94(int[] x)
+        {
+            int[] retVal = x;
+            Array.Sort(retVal);
+            int n = retVal[x.Length - 1];
+            for (int i = 0; i < retVal.Length - 1; i++) retVal[i] = n;
+            return retVal;
         }
     }
 }
