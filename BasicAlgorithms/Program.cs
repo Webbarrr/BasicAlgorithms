@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BasicAlgorithms
 {
@@ -10,516 +8,576 @@ namespace BasicAlgorithms
     {
         static void Main()
         {
-            //// 1. Write a C# Sharp program to compute the sum of the two given integer values. If the two values are the same, then return triple their sum.
-            //Console.WriteLine(Ex1(1, 2));
-            //Console.WriteLine(Ex1(2, 2));
-
-            //// 2. Write a C# Sharp program to get the absolute difference between n and 51. If n is greater than 51 return triple the absolute difference.
-            //Console.WriteLine(Ex2(53));
-            //Console.WriteLine(Ex2(30));
-            //Console.WriteLine(Ex2(51));
-
-            //// 3. Write a C# Sharp program to check two given integers, and return true if one of them is 30 or if their sum is 30. 
-            //Console.WriteLine(Ex3(30, 0));
-            //Console.WriteLine(Ex3(25, 5));
-            //Console.WriteLine(Ex3(20, 30));
-            //Console.WriteLine(Ex3(20, 25));
-
-            //// 4. Write a C# Sharp program to check a given integer and return true if it is within 10 of 100 or 200.
-            //Console.WriteLine(Ex4(103));
-            //Console.WriteLine(Ex4(90));
-            //Console.WriteLine(Ex4(89));
-
-            //// 5. Write a C# Sharp program to create a new string where 'if' is added to the front of a given string. If the string already begins with 'if', return the string unchanged.
-            //Console.WriteLine(Ex5("if else"));
-            //Console.WriteLine(Ex5("else"));
-
-            //// 6. Write a C# Sharp program to remove the character in a given position of a given string. The given position will be in the range 0.. string length -1 inclusive.
-            //Console.WriteLine(Ex6("Python", 1));
-            //Console.WriteLine(Ex6("Python", 0));
-            //Console.WriteLine(Ex6("Python", 4));
-
-            //// 7. Write a C# Sharp program to exchange the first and last characters in a given string and return the new string.
-            //Console.WriteLine(Ex7("abcd"));
-            //Console.WriteLine(Ex7("a"));
-            //Console.WriteLine(Ex7("xy"));
-
-            //// 8. Write a C# Sharp program to create a new string which is 4 copies of the 2 front characters of a given string.
-            //// If the given string length is less than 2 return the original string.
-            //Console.WriteLine(Ex8("C Sharp"));
-            //Console.WriteLine(Ex8("JS"));
-            //Console.WriteLine(Ex8("a"));
-
-            //// 9. Write a C# Sharp program to create a new string with the last char added at the front and back of a given string of length 1 or more.
-            //Console.WriteLine(Ex9("Red"));
-            //Console.WriteLine(Ex9("Green"));
-            //Console.WriteLine(Ex9("1"));
-
-            //// 10. Write a C# Sharp program to check if a given positive number is a multiple of 3 or a multiple of 7.
-            //Console.WriteLine(Ex10(3));
-            //Console.WriteLine(Ex10(14));
-            //Console.WriteLine(Ex10(12));
-            //Console.WriteLine(Ex10(37));
-
-            //// 11. Write a C# Sharp program to create a new string taking the first 3 characters of a given string and return the string with the 3 characters added at 
-            //// both the front and back. If the given string length is less than 3, use whatever characters are there.
-            //Console.WriteLine(Ex11("Python"));
-            //Console.WriteLine(Ex11("JS"));
-            //Console.WriteLine(Ex11("Code"));
-
-            //// 12. Write a C# Sharp program to check if a given string starts with 'C#' or not.
-            //Console.WriteLine(Ex12("C# Sharp"));
-            //Console.WriteLine(Ex12("C#"));
-            //Console.WriteLine(Ex12("C++"));
-
-            //// 13. Write a C# Sharp program to check if one given temperatures is less than 0 and the other is greater than 100.
-            //Console.WriteLine(Ex13(120, -1));
-            //Console.WriteLine(Ex13(-1, 120));
-            //Console.WriteLine(Ex13(2, 120));
-
-            //// 14. Write a C# Sharp program to check two given integers whether either of them is in the range 100..200 inclusive.
-            //Console.WriteLine(Ex14(100, 199));
-            //Console.WriteLine(Ex14(250, 300));
-            //Console.WriteLine(Ex14(105, 190));
-
-            //// 15. Write a C# Sharp program to check whether three given integer values are in the range 20..50 inclusive.
-            //// Return true if 1 or more of them are in the said range otherwise false.
-            //Console.WriteLine(Ex15(11, 20, 12));
-            //Console.WriteLine(Ex15(30, 30, 17));
-            //Console.WriteLine(Ex15(25, 35, 50));
-            //Console.WriteLine(Ex15(15, 12, 8));
-
-            //// 16. Write a C# Sharp program to check whether two given integer values are in the range 20..50 inclusive. 
-            //// Return true if 1 or other is in the said range otherwise false.
-            //Console.WriteLine(Ex16(20, 84));
-            //Console.WriteLine(Ex16(14, 50));
-            //Console.WriteLine(Ex16(11, 45));
-            //Console.WriteLine(Ex16(25, 40));
-            //Console.WriteLine(Ex16(56, 57));
-
-            //// 17. Write a C# Sharp program to check if a string 'yt' appears at index 1 in a given string. If it appears return a string without 'yt' 
-            //// otherwise return the original string.
-            //Console.WriteLine(Ex17("Python"));
-            //Console.WriteLine(Ex17("ytade"));
-            //Console.WriteLine(Ex17("jsues"));
-
-            //// 18. Write a C# Sharp program to check the largest number among three given integers.
-            //Console.WriteLine(Ex18(1, 2, 3));
-            //Console.WriteLine(Ex18(1, 3, 2));
-            //Console.WriteLine(Ex18(1, 1, 1));
-            //Console.WriteLine(Ex18(1, 2, 2));
-
-            //// 19. Write a C# Sharp program to check which number nearest to the value 100 among two given integers. Return 0 if the two numbers are equal.
-            //Console.WriteLine(Ex19(78, 95));
-            //Console.WriteLine(Ex19(95, 95));
-            //Console.WriteLine(Ex19(99, 70));
-
-            //// 20. Write a C# Sharp program to check whether two given integers are in the range 40..50 inclusive, or they are both in the range 50..60 inclusive.
-            //Console.WriteLine(Ex20(78, 95));
-            //Console.WriteLine(Ex20(25, 35));
-            //Console.WriteLine(Ex20(40, 50));
-            //Console.WriteLine(Ex20(55, 60));
-
-            //// 21. Write a C# Sharp program to find the larger value from two positive integer values that is in the range 20..30 inclusive, or return 0 if neither is in that range.
-            //Console.WriteLine(Ex21(78, 95));
-            //Console.WriteLine(Ex21(20, 30));
-            //Console.WriteLine(Ex21(21, 25));
-            //Console.WriteLine(Ex21(28, 28));
-
-            //// 22. Write a C# Sharp program to check if a given string contains between 2 and 4 'z' character.
-            //Console.WriteLine(Ex22("frizz"));
-            //Console.WriteLine(Ex22("zane"));
-            //Console.WriteLine(Ex22("Zazz"));
-            //Console.WriteLine(Ex22("false"));
-
-            //// 23. Write a C# Sharp program to check if two given non-negative integers have the same last digit.
-            //Console.WriteLine(Ex23(123, 456));
-            //Console.WriteLine(Ex23(12, 512));
-            //Console.WriteLine(Ex23(7, 87));
-            //Console.WriteLine(Ex23(12, 45));
-
-            //// 24. Write a C# Sharp program to convert the last 3 characters of a given string in upper case. If the length of the string has less than 3 then uppercase all the characters.
-            //Console.WriteLine(Ex24("Python"));
-            //Console.WriteLine(Ex24("Javascript"));
-            //Console.WriteLine(Ex24("js"));
-            //Console.WriteLine(Ex24("PHP"));
-
-            //// 25. Write a C# Sharp program to create a new string which is n (non-negative integer) copies of a given string.
-            //Console.WriteLine(Ex25("JS", 2));
-            //Console.WriteLine(Ex25("JS", 3));
-            //Console.WriteLine(Ex25("JS", 1));
-
-            //// 26. Write a C# Sharp program to create a new string which is n (non-negative integer) copies of the the first 3 characters of a given string. 
-            //// If the length of the given string is less than 3 then return n copies of the string.
-            //Console.WriteLine(Ex26("Python", 2));
-            //Console.WriteLine(Ex26("Python", 3));
-            //Console.WriteLine(Ex26("JS", 3));
-
-            //// 27. Write a C# Sharp program to count the string "aa" in a given string and assume "aaa" contains two "aa".
-            //Console.WriteLine(Ex27("bbaaccaag"));
-            //Console.WriteLine(Ex27("jjkiaaasew"));
-            //Console.WriteLine(Ex27("JSaaakoiaa"));
-
-            //// 28. Write a C# Sharp program to check if the first appearance of "a" in a given string is immediately followed by another "a".
-            //Console.WriteLine(Ex28("caabb"));
-            //Console.WriteLine(Ex28("babaaba"));
-            //Console.WriteLine(Ex28("aaaaa"));
-
-            //// 29. Write a C# Sharp program to create a new string made of every other character starting with the first from a given string.
-            //Console.WriteLine(Ex29("Python"));
-            //Console.WriteLine(Ex29("PHP"));
-            //Console.WriteLine(Ex29("JS"));
-
-            //// 30. Write a C# Sharp program to create a string like "aababcabcd" from a given string "abcd".
-            //Console.WriteLine(Ex30("abcd"));
-            //Console.WriteLine(Ex30("abc"));
-            //Console.WriteLine(Ex30("a"));
-
-            //// 31. Write a C# Sharp program to count a substring of length 2 appears in a given string and also as the last 2 characters of the string. Do not count the end substring.
-            //Console.WriteLine(Ex31("abcdsab"));
-            //Console.WriteLine(Ex31("abcdabab"));
-            //Console.WriteLine(Ex31("abcabdabab"));
-            //Console.WriteLine(Ex31("abcabd"));
-
-            //// 32. Write a C# Sharp program to check a specified number is preset in a given array of integers.
-            //Console.WriteLine(Ex32(new[] { 1, 2, 9, 3 }, 3));
-            //Console.WriteLine(Ex32(new[] { 1, 2, 2, 3 }, 2));
-            //Console.WriteLine(Ex32(new[] { 1, 2, 2, 3 }, 9));
-
-            //// 33. Write a C# Sharp program to check if one of the first 4 elements in an array of integers is equal to a given element.
-            //Console.WriteLine(Ex33(new[] { 1, 2, 9, 3 }, 3));
-            //Console.WriteLine(Ex33(new[] { 1, 2, 3, 4, 5, 6 }, 2));
-            //Console.WriteLine(Ex33(new[] { 1, 2, 2, 3 }, 9));
-
-            //// 34. Write a C# Sharp program to check whether the sequence of numbers 1, 2, 3 appears in a given array of integers somewhere.
-            //Console.WriteLine(Ex34(new[] { 1, 1, 2, 3, 1 }));
-            //Console.WriteLine(Ex34(new[] { 1, 1, 2, 4, 1 }));
-            //Console.WriteLine(Ex34(new[] { 1, 1, 2, 1, 2, 3 }));
-
-            //// 35. Write a C# Sharp program to compare two given strings and return the number of the positions where they contain the same length 2 substring.
-            //Console.WriteLine(Ex35("abcdefgh", "abijsklm"));
-            //Console.WriteLine(Ex35("abcde", "osuefrcd"));
-            //Console.WriteLine(Ex35("pqrstuvwx", "pqkdiewx"));
-
-            //// 36. Write a C# Sharp program to create a new string from a given string where a specified character have been removed except starting and ending position of the given string
-            //Console.WriteLine(Ex36("xxHxix", "x"));
-            //Console.WriteLine(Ex36("abxdddca", "a"));
-            //Console.WriteLine(Ex36("xabjbhtrb", "b"));
-
-            //// 37. Write a C# Sharp program to create a new string of the characters at indexes 0,1, 4,5, 8,9 ... from a given string.
-            //Console.WriteLine(Ex37("Python"));
-            //Console.WriteLine(Ex37("JavaScript"));
-            //Console.WriteLine(Ex37("HTML"));
-
-            //// 38. Write a C# Sharp program to count the number of two 5's are next to each other in an array of integers. Also count the situation where the second 5 is actually a 6.
-            //Console.WriteLine(Ex38(new[] { 5, 5, 2 }));
-            //Console.WriteLine(Ex38(new[] { 5, 5, 2, 5, 5 }));
-            //Console.WriteLine(Ex38(new[] { 5, 6, 2, 9 }));
-
-            //// 39. Write a C# Sharp program to check if a triple is presents in an array of integers or not. If a value appears three times in a row in an array it is called a triple.
-            //Console.WriteLine(Ex39(new[] { 1, 1, 2, 2, 1 }));
-            //Console.WriteLine(Ex39(new[] { 1, 1, 2, 1, 2, 3 }));
-            //Console.WriteLine(Ex39(new[] { 1, 1, 1, 2, 2, 2, 1 }));
-
-            //// 40. Write a C# Sharp program to compute the sum of the two given integers. If the sum is in the range 10..20 inclusive return 30.
-            //Console.WriteLine(Ex40(12, 17));
-            //Console.WriteLine(Ex40(2, 17));
-            //Console.WriteLine(Ex40(22, 17));
-            //Console.WriteLine(Ex40(20, 0));
-
-            //// 41. Write a C# Sharp program that accept two integers and return true if either one is 5 or their sum or difference is 5.
-            //Console.WriteLine(Ex41(5, 4));
-            //Console.WriteLine(Ex41(4, 3));
-            //Console.WriteLine(Ex41(1, 4));
-
-            //// 42. Write a C# Sharp program to test if a given non-negative number is a multiple of 13 or it is one more than a multiple of 13.
-            //Console.WriteLine(Ex42(13));
-            //Console.WriteLine(Ex42(14));
-            //Console.WriteLine(Ex42(27));
-            //Console.WriteLine(Ex42(41));
-
-            //// 43. Write a C# Sharp program to check if a given non-negative given number is a multiple of 3 or 7, but not both.
-            //Console.WriteLine(Ex43(3));
-            //Console.WriteLine(Ex43(7));
-            //Console.WriteLine(Ex43(21));
-
-            //// 44. Write a C# Sharp program to check if a given number is within 2 of a multiple of 10.
-            //Console.WriteLine(Ex44(3));
-            //Console.WriteLine(Ex44(7));
-            //Console.WriteLine(Ex44(8));
-            //Console.WriteLine(Ex44(21));
-
-            //// 45. Write a C# Sharp program to compute the sum of the two given integers. If one of the given integer value is in the range 10..20 inclusive return 18.
-            //Console.WriteLine(Ex45(3, 7));
-            //Console.WriteLine(Ex45(10, 11));
-            //Console.WriteLine(Ex45(10, 20));
-            //Console.WriteLine(Ex45(21, 220));
-
-            //// 46. Write a C# Sharp program to check whether a given string starts with "F" or ends with "B". If the string starts with "F" return "Fizz" and return "Buzz" if it ends with "B" 
-            //// If the string starts with "F" and ends with "B" return "FizzBuzz". In other cases return the original string.
-            //Console.WriteLine(Ex46("Founder"));
-            //Console.WriteLine(Ex46("founder"));
-            //Console.WriteLine(Ex46("club"));
-            //Console.WriteLine(Ex46("forb"));
-
-            //// 47. Write a C# Sharp program to check if it is possible to add two integers to get the third integer from three given integers.
-            //Console.WriteLine(Ex47(1, 2, 3));
-            //Console.WriteLine(Ex47(4, 5, 6));
-            //Console.WriteLine(Ex47(-1, 1, 0));
-
-            //// 48. Write a C# Sharp program to check if y is greater than x, and z is greater than y from three given integers x,y,z.
-            //Console.WriteLine(Ex48(1, 2, 3));
-            //Console.WriteLine(Ex48(4, 5, 6));
-            //Console.WriteLine(Ex48(-1, 1, 0));
-
-            //// 49. Write a C# Sharp program to check if three given numbers are in strict increasing order, such as 4 7 15, or 45, 56, 67, but not 4 ,5, 8 or 6, 6, 8.
-            //// However,if a fourth parameter is true, equality is allowed, such as 6, 6, 8 or 7, 7, 7.
-            //Console.WriteLine(Ex49(1, 2, 3, false));
-            //Console.WriteLine(Ex49(1, 2, 3, true));
-            //Console.WriteLine(Ex49(10, 2, 30, false));
-            //Console.WriteLine(Ex49(10, 10, 30, true));
-
-            //// 50. Write a C# Sharp program to check if two or more non-negative given integers have the same rightmost digit.
-            //Console.WriteLine(Ex50(11, 21, 31));
-            //Console.WriteLine(Ex50(11, 22, 31));
-            //Console.WriteLine(Ex50(11, 22, 33));
-            //Console.WriteLine(Ex50(11, 257, 9001));
-
-            //// 51. Write a C# Sharp program to check three given integers and return true if one of them is 20 or more less than one of the others.
-            //Console.WriteLine(Ex51(11, 21, 31));
-            //Console.WriteLine(Ex51(11, 22, 31));
-            //Console.WriteLine(Ex51(10, 20, 15));
-
-            //// 52. Write a C# Sharp program to find the larger from two given integers. However if the two integers have the same remainder when divided by 7, 
-            //// then return the smaller integer. If the two integers are the same, return 0.
-            //Console.WriteLine(Ex52(11, 21));
-            //Console.WriteLine(Ex52(11, 20));
-            //Console.WriteLine(Ex52(10, 10));
-
-            //// 53. Write a C# Sharp program to check two given integers, each in the range 10..99. 
-            //// Return true if a digit appears in both numbers, such as the 3 in 13 and 33.
-            //Console.WriteLine(Ex53(13, 33));
-            //Console.WriteLine(Ex53(11, 21));
-            //Console.WriteLine(Ex53(11, 20));
-            //Console.WriteLine(Ex53(10, 10));
-
-            //// 54. Write a C# Sharp program to compute the sum of two given non-negative integers x and y as long as the sum has the same number of digits as x. 
-            //// If the sum has more digits than x then return x without y.
-            //Console.WriteLine(Ex54(4, 5));
-            //Console.WriteLine(Ex54(7, 4));
-            //Console.WriteLine(Ex54(10, 10));
-
-            //// 55. Write a C# Sharp program to compute the sum of three given integers. If the two values are same return the third value.
-            //Console.WriteLine(Ex55(4, 5, 7));
-            //Console.WriteLine(Ex55(7, 4, 12));
-            //Console.WriteLine(Ex55(10, 10, 12));
-            //Console.WriteLine(Ex55(12, 12, 18));
-
-            //// 56. Write a C# Sharp program to compute the sum of the three integers. If one of the values is 13 then do not count it and its right towards the sum.
-            //Console.WriteLine(Ex56(4, 5, 7));
-            //Console.WriteLine(Ex56(7, 4, 12));
-            //Console.WriteLine(Ex56(10, 13, 12));
-            //Console.WriteLine(Ex56(13, 12, 18));
-
-            //// 57. Write a C# Sharp program to compute the sum of the three given integers. However, if any of the values is in the range 10..20 inclusive then that value counts as 0, except 13 and 17.
-            //Console.WriteLine(Ex57(4, 5, 7));
-            //Console.WriteLine(Ex57(7, 4, 12));
-            //Console.WriteLine(Ex57(10, 13, 12));
-            //Console.WriteLine(Ex57(17, 12, 18));
-
-            //// 58. Write a C# Sharp program to check two given integers and return the value whichever value is nearest to 13 without going over. Return 0 if both numbers go over
-            //Console.WriteLine(Ex58(4, 5));
-            //Console.WriteLine(Ex58(7, 12));
-            //Console.WriteLine(Ex58(10, 13));
-            //Console.WriteLine(Ex58(17, 33));
-            //Console.WriteLine(Ex58(17, 33));
-
-            //// 59. Write a C# Sharp program to check three given integers (small, medium and large) and return true if the difference between small and medium and the difference between medium and large is same. 
-            //Console.WriteLine(Ex59(4, 5, 6));
-            //Console.WriteLine(Ex59(7, 12, 13));
-            //Console.WriteLine(Ex59(-1, 0, 1));
-
-            //// 60. Write a C# Sharp program to create a new string using two given strings s1, s2, the format of the new string will be s1s2s2s1.
-            //Console.WriteLine(Ex60("Hi", "Hello"));
-            //Console.WriteLine(Ex60("whats", "app"));
-
-            //// 61. Write a C# Sharp program to insert a given string into middle of the another given string of length 4.
-            //Console.WriteLine(Ex61("[[]]", "Hello"));
-            //Console.WriteLine(Ex61("(())", "Hi"));
-
-            //// 62. Write a C# Sharp program to create a new string using three copies of the last two character of a given string of length atleast two.
-            //Console.WriteLine(Ex62("Hello"));
-            //Console.WriteLine(Ex62("Hi"));
-
-            //// 63. Write a C# Sharp program to create a new string using first two characters of a given string. If the string length is less than 2 then return the original string.. 
-            //Console.WriteLine(Ex63("Hello"));
-            //Console.WriteLine(Ex63("Hi"));
-            //Console.WriteLine(Ex63("H"));
-            //Console.WriteLine(Ex63(" "));
-
-            //// 64. Write a C# Sharp program to create a new string of the first half of a given string of even length.
-            //Console.WriteLine(Ex64("Hello"));
-            //Console.WriteLine(Ex64("Hi"));
-
-            //// 65. Write a C# Sharp program to create a new string without the first and last character of a given string of length atleast two.
-            //Console.WriteLine(Ex65("Hello"));
-            //Console.WriteLine(Ex65("Hi"));
-            //Console.WriteLine(Ex65("Python"));
-
-            //// 66. Write a C# Sharp program to create a new string from two given string one is shorter and another is longer. The format of the new string will be long string + short string + long string.
-            //Console.WriteLine(Ex66("Hello", "Hi"));
-            //Console.WriteLine(Ex66("JS", "Python"));
-
-            //// 67. Write a C# Sharp program to concat two given string of length atleast 1, after removing their first character.
-            //Console.WriteLine(Ex67("Hello", "Hi"));
-            //Console.WriteLine(Ex67("JS", "Python"));
-
-            //// 68. Write a C# Sharp program to move the first two characters to the end of a given string of length at least two.
-            //Console.WriteLine(Ex68("Hello"));
-            //Console.WriteLine(Ex68("JS"));
-
-            //// 69. Write a C# Sharp program to move the last two characters to the start of a given string of length at least two.
-            //Console.WriteLine(Ex69("Hello"));
-            //Console.WriteLine(Ex69("JS"));
-
-            //// 70. Write a C# Sharp program to create a new string without the first and last character of a given string of any length.
-            //Console.WriteLine(Ex70("Hello"));
-            //Console.WriteLine(Ex70("JS"));
-            //Console.WriteLine(Ex70(""));
-
-            //// 71. Write a C# Sharp program to create a new string using the two middle characters of a given string of even length (at least 2).
-            //Console.WriteLine(Ex71("Hello"));
-            //Console.WriteLine(Ex71("JS"));
-            //Console.WriteLine(Ex71("Python"));
-
-            //// 72. Write a C# Sharp program to check if a given string ends with "on"
-            //Console.WriteLine(Ex72("Hello"));
-            //Console.WriteLine(Ex72("Python"));
-            //Console.WriteLine(Ex72("on"));
-            //Console.WriteLine(Ex72("o"));
-
-            //// 73. Write a C# Sharp program to create a new string using the first and last n characters from a given string of length at least n.
-            //Console.WriteLine(Ex73("Hello", 1));
-            //Console.WriteLine(Ex73("Python", 2));
-            //Console.WriteLine(Ex73("on", 1));
-            //Console.WriteLine(Ex73("o", 1));
-
-            //// 74. Write a C# Sharp program to create a new string of length 2 starting at the given index of a given string.
-            //Console.WriteLine(Ex74("Hello", 1));
-            //Console.WriteLine(Ex74("Python", 2));
-            //Console.WriteLine(Ex74("on", 1));
-
-            //// 75. Write a C# Sharp program to create a new string taking 3 characters from the middle of a given string at least 3.
-            //Console.WriteLine(Ex75("Hello"));
-            //Console.WriteLine(Ex75("Python"));
-            //Console.WriteLine(Ex75("abc"));
-
-            //// 76. Write a C# Sharp program to create a new string of length 2, using first two characters of a given string. 
-            //// If the given string length is less than 2 use '#' as missing characters.
-            //Console.WriteLine(Ex76("Hello"));
-            //Console.WriteLine(Ex76("Python"));
-            //Console.WriteLine(Ex76("a"));
-            //Console.WriteLine(Ex76(""));
-
-            //// 77. Write a C# Sharp program to create a new string taking the first character from a given string and the last character from another given string. 
-            //// If the length of any given string is 0, use '#' as its missing character.
-            //Console.WriteLine(Ex77("Hello", "Hi"));
-            //Console.WriteLine(Ex77("Python", "PHP"));
-            //Console.WriteLine(Ex77("JS", "JS"));
-            //Console.WriteLine(Ex77("Csharp", ""));
-
-            //// 78. Write a C# Sharp program to concat two given strings. If there are any double character in new string then omit one character.
-            //Console.WriteLine(Ex78("Hello", "Hi"));
-            //Console.WriteLine(Ex78("Python", "PHP"));
-            //Console.WriteLine(Ex78("PHP", "PHP"));
-
-            //// 79. Write a C# Sharp program to create a new string from a given string after swapping last two characters.
-            //Console.WriteLine(Ex79("Hello"));
-            //Console.WriteLine(Ex79("Python"));
-            //Console.WriteLine(Ex79("PHP"));
-            //Console.WriteLine(Ex79("JS"));
-            //Console.WriteLine(Ex79("C"));
-
-            //// 80. Write a C# Sharp program to check if a given string begins with 'abc' or 'xyz'. 
-            //// If the string begins with 'abc' or 'xyz' return 'abc' or 'xyz' otherwise return the empty string.
-            //Console.WriteLine(Ex80("abc"));
-            //Console.WriteLine(Ex80("abcdef"));
-            //Console.WriteLine(Ex80("C"));
-            //Console.WriteLine(Ex80("xyz"));
-            //Console.WriteLine(Ex80("xyzsder"));
-
-            //// 81. Write a C# Sharp program to check whether the first two characters and last two characters of a given string are same.
-            //Console.WriteLine(Ex81("abab"));
-            //Console.WriteLine(Ex81("abcdef"));
-            //Console.WriteLine(Ex81("xyzsderxy"));
-
-            // 82. Write a C# Sharp program to concat two given strings. If the given strings have different length remove the characters from the longer string.
-            //Console.WriteLine(Ex82("abc", "abcd"));
-            //Console.WriteLine(Ex82("Python", "Python"));
-            //Console.WriteLine(Ex82("JS", "Python"));
-
-            //// 83. Write a C# Sharp program to create a new string using 3 copies of the first 2 characters of a given string. If the length of the given string is less than 2 use the whole string.
-            //Console.WriteLine(Ex83("abc"));
-            //Console.WriteLine(Ex83("Python"));
-            //Console.WriteLine(Ex83("J"));
-
-            //// 84. Write a C# Sharp program to create a new string from a given string. If the two characters of the given string from its beginning and end are same return the given string without 
-            //// the first two characters otherwise return the original string.
-            //Console.WriteLine(Ex84("abcab"));
-            //Console.WriteLine(Ex84("Python"));
-
-            //// 85. Write a C# Sharp program to create a new string from a given string without the first two characters. Keep the first character if it is "p" and keep the second character if it is "y".
-            //Console.WriteLine(Ex85("abcab"));
-            //Console.WriteLine(Ex85("python"));
-            //Console.WriteLine(Ex85("press"));
-            //Console.WriteLine(Ex85("jython"));
-
-            //// 86. Write a C# Sharp program to create a new string from a given string without the first and last character if the first or last characters are 'a' otherwise return the original given string.
-            //Console.WriteLine(Ex86("abcab"));
-            //Console.WriteLine(Ex86("python"));
-            //Console.WriteLine(Ex86("abcda"));
-            //Console.WriteLine(Ex86("jython"));
-
-            //// 87. Write a C# Sharp program to create a new string from a given string. If the first or first two characters is 'a', return the string without those 'a' characters otherwise return the original given string.
-            //Console.WriteLine(Ex87("abcab"));
-            //Console.WriteLine(Ex87("python"));
-            //Console.WriteLine(Ex87("aacda"));
-            //Console.WriteLine(Ex87("jython"));
-
-            //// 88. Write a C# Sharp program to check a given array of integers of length 1 or more and return true if 10 appears as either first or last element in the given array.
-            //Console.WriteLine(Ex88(new[] { 10, 20, 40, 50 }));
-            //Console.WriteLine(Ex88(new[] { 5, 20, 40, 10 }));
-            //Console.WriteLine(Ex88(new[] { 10, 20, 40, 10 }));
-            //Console.WriteLine(Ex88(new[] { 12, 24, 35, 55 }));
-
-            //// 89. Write a C# Sharp program to check a given array of integers of length 1 or more and return true if the first element and the last element are equal in the given array.
-            //Console.WriteLine(Ex89(new[] { 10, 20, 40, 50 }));
-            //Console.WriteLine(Ex89(new[] { 10, 20, 40, 10 }));
-            //Console.WriteLine(Ex89(new[] { 12, 24, 35, 55 }));
-
-            //// 90. Write a C# Sharp program to check two given arrays of integers of length 1 or more and return true if they have the same first element or they have the same last element.
-            //Console.WriteLine(Ex90(new[] { 10, 20, 40, 50 }, new[] { 10, 20, 40, 50 }));
-            //Console.WriteLine(Ex90(new[] { 10, 20, 40, 50 }, new[] { 10, 20, 40, 5 }));
-            //Console.WriteLine(Ex90(new[] { 10, 20, 40, 50 }, new[] { 1, 20, 40, 5 }));
-
-            //// 91. Write a C# Sharp program to compute the sum of the elements of an given array of integers.
-            //Console.WriteLine(Ex91(new[] { 10, 20, 30, 40, 50 }));
-            //Console.WriteLine(Ex91(new[] { 10, 20, -30, -40, 50 }));
-
-            //// 92. Write a C# Sharp program to rotate the elements of a given array of integers (length 4 ) in left direction and return the new array.
-            //int[] item = Ex92(new[] { 10, 20, -30, -40 });
-            //Console.Write("Rotated array: ");
-            //foreach (var i in item) Console.Write(i.ToString() + " ");
-
-            //// 93. Write a C# Sharp program to reverse a given array of integers and length 4.
-            //int[] item = Ex93(new[] { 10, 20, -30, -40, 50 });
-            //Console.Write("Reverse array: ");
-            //foreach (var i in item) Console.Write(i.ToString() + " ");
+            // 1. Write a C# Sharp program to compute the sum of the two given integer values. If the two values are the same, then return triple their sum.
+            Console.WriteLine(Ex1(1, 2));
+            Console.WriteLine(Ex1(2, 2));
+
+            // 2. Write a C# Sharp program to get the absolute difference between n and 51. If n is greater than 51 return triple the absolute difference.
+            Console.WriteLine(Ex2(53));
+            Console.WriteLine(Ex2(30));
+            Console.WriteLine(Ex2(51));
+
+            // 3. Write a C# Sharp program to check two given integers, and return true if one of them is 30 or if their sum is 30. 
+            Console.WriteLine(Ex3(30, 0));
+            Console.WriteLine(Ex3(25, 5));
+            Console.WriteLine(Ex3(20, 30));
+            Console.WriteLine(Ex3(20, 25));
+
+            // 4. Write a C# Sharp program to check a given integer and return true if it is within 10 of 100 or 200.
+            Console.WriteLine(Ex4(103));
+            Console.WriteLine(Ex4(90));
+            Console.WriteLine(Ex4(89));
+
+            // 5. Write a C# Sharp program to create a new string where 'if' is added to the front of a given string. If the string already begins with 'if', return the string unchanged.
+            Console.WriteLine(Ex5("if else"));
+            Console.WriteLine(Ex5("else"));
+
+            // 6. Write a C# Sharp program to remove the character in a given position of a given string. The given position will be in the range 0.. string length -1 inclusive.
+            Console.WriteLine(Ex6("Python", 1));
+            Console.WriteLine(Ex6("Python", 0));
+            Console.WriteLine(Ex6("Python", 4));
+
+            // 7. Write a C# Sharp program to exchange the first and last characters in a given string and return the new string.
+            Console.WriteLine(Ex7("abcd"));
+            Console.WriteLine(Ex7("a"));
+            Console.WriteLine(Ex7("xy"));
+
+            // 8. Write a C# Sharp program to create a new string which is 4 copies of the 2 front characters of a given string.
+            // If the given string length is less than 2 return the original string.
+            Console.WriteLine(Ex8("C Sharp"));
+            Console.WriteLine(Ex8("JS"));
+            Console.WriteLine(Ex8("a"));
+
+            // 9. Write a C# Sharp program to create a new string with the last char added at the front and back of a given string of length 1 or more.
+            Console.WriteLine(Ex9("Red"));
+            Console.WriteLine(Ex9("Green"));
+            Console.WriteLine(Ex9("1"));
+
+            // 10. Write a C# Sharp program to check if a given positive number is a multiple of 3 or a multiple of 7.
+            Console.WriteLine(Ex10(3));
+            Console.WriteLine(Ex10(14));
+            Console.WriteLine(Ex10(12));
+            Console.WriteLine(Ex10(37));
+
+            // 11. Write a C# Sharp program to create a new string taking the first 3 characters of a given string and return the string with the 3 characters added at 
+            // both the front and back. If the given string length is less than 3, use whatever characters are there.
+            Console.WriteLine(Ex11("Python"));
+            Console.WriteLine(Ex11("JS"));
+            Console.WriteLine(Ex11("Code"));
+
+            // 12. Write a C# Sharp program to check if a given string starts with 'C#' or not.
+            Console.WriteLine(Ex12("C# Sharp"));
+            Console.WriteLine(Ex12("C#"));
+            Console.WriteLine(Ex12("C++"));
+
+            // 13. Write a C# Sharp program to check if one given temperatures is less than 0 and the other is greater than 100.
+            Console.WriteLine(Ex13(120, -1));
+            Console.WriteLine(Ex13(-1, 120));
+            Console.WriteLine(Ex13(2, 120));
+
+            // 14. Write a C# Sharp program to check two given integers whether either of them is in the range 100..200 inclusive.
+            Console.WriteLine(Ex14(100, 199));
+            Console.WriteLine(Ex14(250, 300));
+            Console.WriteLine(Ex14(105, 190));
+
+            // 15. Write a C# Sharp program to check whether three given integer values are in the range 20..50 inclusive.
+            // Return true if 1 or more of them are in the said range otherwise false.
+            Console.WriteLine(Ex15(11, 20, 12));
+            Console.WriteLine(Ex15(30, 30, 17));
+            Console.WriteLine(Ex15(25, 35, 50));
+            Console.WriteLine(Ex15(15, 12, 8));
+
+            // 16. Write a C# Sharp program to check whether two given integer values are in the range 20..50 inclusive. 
+            // Return true if 1 or other is in the said range otherwise false.
+            Console.WriteLine(Ex16(20, 84));
+            Console.WriteLine(Ex16(14, 50));
+            Console.WriteLine(Ex16(11, 45));
+            Console.WriteLine(Ex16(25, 40));
+            Console.WriteLine(Ex16(56, 57));
+
+            // 17. Write a C# Sharp program to check if a string 'yt' appears at index 1 in a given string. If it appears return a string without 'yt' 
+            // otherwise return the original string.
+            Console.WriteLine(Ex17("Python"));
+            Console.WriteLine(Ex17("ytade"));
+            Console.WriteLine(Ex17("jsues"));
+
+            // 18. Write a C# Sharp program to check the largest number among three given integers.
+            Console.WriteLine(Ex18(1, 2, 3));
+            Console.WriteLine(Ex18(1, 3, 2));
+            Console.WriteLine(Ex18(1, 1, 1));
+            Console.WriteLine(Ex18(1, 2, 2));
+
+            // 19. Write a C# Sharp program to check which number nearest to the value 100 among two given integers. Return 0 if the two numbers are equal.
+            Console.WriteLine(Ex19(78, 95));
+            Console.WriteLine(Ex19(95, 95));
+            Console.WriteLine(Ex19(99, 70));
+
+            // 20. Write a C# Sharp program to check whether two given integers are in the range 40..50 inclusive, or they are both in the range 50..60 inclusive.
+            Console.WriteLine(Ex20(78, 95));
+            Console.WriteLine(Ex20(25, 35));
+            Console.WriteLine(Ex20(40, 50));
+            Console.WriteLine(Ex20(55, 60));
+
+            // 21. Write a C# Sharp program to find the larger value from two positive integer values that is in the range 20..30 inclusive, or return 0 if neither is in that range.
+            Console.WriteLine(Ex21(78, 95));
+            Console.WriteLine(Ex21(20, 30));
+            Console.WriteLine(Ex21(21, 25));
+            Console.WriteLine(Ex21(28, 28));
+
+            // 22. Write a C# Sharp program to check if a given string contains between 2 and 4 'z' character.
+            Console.WriteLine(Ex22("frizz"));
+            Console.WriteLine(Ex22("zane"));
+            Console.WriteLine(Ex22("Zazz"));
+            Console.WriteLine(Ex22("false"));
+
+            // 23. Write a C# Sharp program to check if two given non-negative integers have the same last digit.
+            Console.WriteLine(Ex23(123, 456));
+            Console.WriteLine(Ex23(12, 512));
+            Console.WriteLine(Ex23(7, 87));
+            Console.WriteLine(Ex23(12, 45));
+
+            // 24. Write a C# Sharp program to convert the last 3 characters of a given string in upper case. If the length of the string has less than 3 then uppercase all the characters.
+            Console.WriteLine(Ex24("Python"));
+            Console.WriteLine(Ex24("Javascript"));
+            Console.WriteLine(Ex24("js"));
+            Console.WriteLine(Ex24("PHP"));
+
+            // 25. Write a C# Sharp program to create a new string which is n (non-negative integer) copies of a given string.
+            Console.WriteLine(Ex25("JS", 2));
+            Console.WriteLine(Ex25("JS", 3));
+            Console.WriteLine(Ex25("JS", 1));
+
+            // 26. Write a C# Sharp program to create a new string which is n (non-negative integer) copies of the the first 3 characters of a given string. 
+            // If the length of the given string is less than 3 then return n copies of the string.
+            Console.WriteLine(Ex26("Python", 2));
+            Console.WriteLine(Ex26("Python", 3));
+            Console.WriteLine(Ex26("JS", 3));
+
+            // 27. Write a C# Sharp program to count the string "aa" in a given string and assume "aaa" contains two "aa".
+            Console.WriteLine(Ex27("bbaaccaag"));
+            Console.WriteLine(Ex27("jjkiaaasew"));
+            Console.WriteLine(Ex27("JSaaakoiaa"));
+
+            // 28. Write a C# Sharp program to check if the first appearance of "a" in a given string is immediately followed by another "a".
+            Console.WriteLine(Ex28("caabb"));
+            Console.WriteLine(Ex28("babaaba"));
+            Console.WriteLine(Ex28("aaaaa"));
+
+            // 29. Write a C# Sharp program to create a new string made of every other character starting with the first from a given string.
+            Console.WriteLine(Ex29("Python"));
+            Console.WriteLine(Ex29("PHP"));
+            Console.WriteLine(Ex29("JS"));
+
+            // 30. Write a C# Sharp program to create a string like "aababcabcd" from a given string "abcd".
+            Console.WriteLine(Ex30("abcd"));
+            Console.WriteLine(Ex30("abc"));
+            Console.WriteLine(Ex30("a"));
+
+            // 31. Write a C# Sharp program to count a substring of length 2 appears in a given string and also as the last 2 characters of the string. Do not count the end substring.
+            Console.WriteLine(Ex31("abcdsab"));
+            Console.WriteLine(Ex31("abcdabab"));
+            Console.WriteLine(Ex31("abcabdabab"));
+            Console.WriteLine(Ex31("abcabd"));
+
+            // 32. Write a C# Sharp program to check a specified number is preset in a given array of integers.
+            Console.WriteLine(Ex32(new[] { 1, 2, 9, 3 }, 3));
+            Console.WriteLine(Ex32(new[] { 1, 2, 2, 3 }, 2));
+            Console.WriteLine(Ex32(new[] { 1, 2, 2, 3 }, 9));
+
+            // 33. Write a C# Sharp program to check if one of the first 4 elements in an array of integers is equal to a given element.
+            Console.WriteLine(Ex33(new[] { 1, 2, 9, 3 }, 3));
+            Console.WriteLine(Ex33(new[] { 1, 2, 3, 4, 5, 6 }, 2));
+            Console.WriteLine(Ex33(new[] { 1, 2, 2, 3 }, 9));
+
+            // 34. Write a C# Sharp program to check whether the sequence of numbers 1, 2, 3 appears in a given array of integers somewhere.
+            Console.WriteLine(Ex34(new[] { 1, 1, 2, 3, 1 }));
+            Console.WriteLine(Ex34(new[] { 1, 1, 2, 4, 1 }));
+            Console.WriteLine(Ex34(new[] { 1, 1, 2, 1, 2, 3 }));
+
+            // 35. Write a C# Sharp program to compare two given strings and return the number of the positions where they contain the same length 2 substring.
+            Console.WriteLine(Ex35("abcdefgh", "abijsklm"));
+            Console.WriteLine(Ex35("abcde", "osuefrcd"));
+            Console.WriteLine(Ex35("pqrstuvwx", "pqkdiewx"));
+
+            // 36. Write a C# Sharp program to create a new string from a given string where a specified character have been removed except starting and ending position of the given string
+            Console.WriteLine(Ex36("xxHxix", "x"));
+            Console.WriteLine(Ex36("abxdddca", "a"));
+            Console.WriteLine(Ex36("xabjbhtrb", "b"));
+
+            // 37. Write a C# Sharp program to create a new string of the characters at indexes 0,1, 4,5, 8,9 ... from a given string.
+            Console.WriteLine(Ex37("Python"));
+            Console.WriteLine(Ex37("JavaScript"));
+            Console.WriteLine(Ex37("HTML"));
+
+            // 38. Write a C# Sharp program to count the number of two 5's are next to each other in an array of integers. Also count the situation where the second 5 is actually a 6.
+            Console.WriteLine(Ex38(new[] { 5, 5, 2 }));
+            Console.WriteLine(Ex38(new[] { 5, 5, 2, 5, 5 }));
+            Console.WriteLine(Ex38(new[] { 5, 6, 2, 9 }));
+
+            // 39. Write a C# Sharp program to check if a triple is presents in an array of integers or not. If a value appears three times in a row in an array it is called a triple.
+            Console.WriteLine(Ex39(new[] { 1, 1, 2, 2, 1 }));
+            Console.WriteLine(Ex39(new[] { 1, 1, 2, 1, 2, 3 }));
+            Console.WriteLine(Ex39(new[] { 1, 1, 1, 2, 2, 2, 1 }));
+
+            // 40. Write a C# Sharp program to compute the sum of the two given integers. If the sum is in the range 10..20 inclusive return 30.
+            Console.WriteLine(Ex40(12, 17));
+            Console.WriteLine(Ex40(2, 17));
+            Console.WriteLine(Ex40(22, 17));
+            Console.WriteLine(Ex40(20, 0));
+
+            // 41. Write a C# Sharp program that accept two integers and return true if either one is 5 or their sum or difference is 5.
+            Console.WriteLine(Ex41(5, 4));
+            Console.WriteLine(Ex41(4, 3));
+            Console.WriteLine(Ex41(1, 4));
+
+            // 42. Write a C# Sharp program to test if a given non-negative number is a multiple of 13 or it is one more than a multiple of 13.
+            Console.WriteLine(Ex42(13));
+            Console.WriteLine(Ex42(14));
+            Console.WriteLine(Ex42(27));
+            Console.WriteLine(Ex42(41));
+
+            // 43. Write a C# Sharp program to check if a given non-negative given number is a multiple of 3 or 7, but not both.
+            Console.WriteLine(Ex43(3));
+            Console.WriteLine(Ex43(7));
+            Console.WriteLine(Ex43(21));
+
+            // 44. Write a C# Sharp program to check if a given number is within 2 of a multiple of 10.
+            Console.WriteLine(Ex44(3));
+            Console.WriteLine(Ex44(7));
+            Console.WriteLine(Ex44(8));
+            Console.WriteLine(Ex44(21));
+
+            // 45. Write a C# Sharp program to compute the sum of the two given integers. If one of the given integer value is in the range 10..20 inclusive return 18.
+            Console.WriteLine(Ex45(3, 7));
+            Console.WriteLine(Ex45(10, 11));
+            Console.WriteLine(Ex45(10, 20));
+            Console.WriteLine(Ex45(21, 220));
+
+            // 46. Write a C# Sharp program to check whether a given string starts with "F" or ends with "B". If the string starts with "F" return "Fizz" and return "Buzz" if it ends with "B" 
+            // If the string starts with "F" and ends with "B" return "FizzBuzz". In other cases return the original string.
+            Console.WriteLine(Ex46("Founder"));
+            Console.WriteLine(Ex46("founder"));
+            Console.WriteLine(Ex46("club"));
+            Console.WriteLine(Ex46("forb"));
+
+            // 47. Write a C# Sharp program to check if it is possible to add two integers to get the third integer from three given integers.
+            Console.WriteLine(Ex47(1, 2, 3));
+            Console.WriteLine(Ex47(4, 5, 6));
+            Console.WriteLine(Ex47(-1, 1, 0));
+
+            // 48. Write a C# Sharp program to check if y is greater than x, and z is greater than y from three given integers x,y,z.
+            Console.WriteLine(Ex48(1, 2, 3));
+            Console.WriteLine(Ex48(4, 5, 6));
+            Console.WriteLine(Ex48(-1, 1, 0));
+
+            // 49. Write a C# Sharp program to check if three given numbers are in strict increasing order, such as 4 7 15, or 45, 56, 67, but not 4 ,5, 8 or 6, 6, 8.
+            // However,if a fourth parameter is true, equality is allowed, such as 6, 6, 8 or 7, 7, 7.
+            Console.WriteLine(Ex49(1, 2, 3, false));
+            Console.WriteLine(Ex49(1, 2, 3, true));
+            Console.WriteLine(Ex49(10, 2, 30, false));
+            Console.WriteLine(Ex49(10, 10, 30, true));
+
+            // 50. Write a C# Sharp program to check if two or more non-negative given integers have the same rightmost digit.
+            Console.WriteLine(Ex50(11, 21, 31));
+            Console.WriteLine(Ex50(11, 22, 31));
+            Console.WriteLine(Ex50(11, 22, 33));
+            Console.WriteLine(Ex50(11, 257, 9001));
+
+            // 51. Write a C# Sharp program to check three given integers and return true if one of them is 20 or more less than one of the others.
+            Console.WriteLine(Ex51(11, 21, 31));
+            Console.WriteLine(Ex51(11, 22, 31));
+            Console.WriteLine(Ex51(10, 20, 15));
+
+            // 52. Write a C# Sharp program to find the larger from two given integers. However if the two integers have the same remainder when divided by 7, 
+            // then return the smaller integer. If the two integers are the same, return 0.
+            Console.WriteLine(Ex52(11, 21));
+            Console.WriteLine(Ex52(11, 20));
+            Console.WriteLine(Ex52(10, 10));
+
+            // 53. Write a C# Sharp program to check two given integers, each in the range 10..99. 
+            // Return true if a digit appears in both numbers, such as the 3 in 13 and 33.
+            Console.WriteLine(Ex53(13, 33));
+            Console.WriteLine(Ex53(11, 21));
+            Console.WriteLine(Ex53(11, 20));
+            Console.WriteLine(Ex53(10, 10));
+
+            // 54. Write a C# Sharp program to compute the sum of two given non-negative integers x and y as long as the sum has the same number of digits as x. 
+            // If the sum has more digits than x then return x without y.
+            Console.WriteLine(Ex54(4, 5));
+            Console.WriteLine(Ex54(7, 4));
+            Console.WriteLine(Ex54(10, 10));
+
+            // 55. Write a C# Sharp program to compute the sum of three given integers. If the two values are same return the third value.
+            Console.WriteLine(Ex55(4, 5, 7));
+            Console.WriteLine(Ex55(7, 4, 12));
+            Console.WriteLine(Ex55(10, 10, 12));
+            Console.WriteLine(Ex55(12, 12, 18));
+
+            // 56. Write a C# Sharp program to compute the sum of the three integers. If one of the values is 13 then do not count it and its right towards the sum.
+            Console.WriteLine(Ex56(4, 5, 7));
+            Console.WriteLine(Ex56(7, 4, 12));
+            Console.WriteLine(Ex56(10, 13, 12));
+            Console.WriteLine(Ex56(13, 12, 18));
+
+            // 57. Write a C# Sharp program to compute the sum of the three given integers. However, if any of the values is in the range 10..20 inclusive then that value counts as 0, except 13 and 17.
+            Console.WriteLine(Ex57(4, 5, 7));
+            Console.WriteLine(Ex57(7, 4, 12));
+            Console.WriteLine(Ex57(10, 13, 12));
+            Console.WriteLine(Ex57(17, 12, 18));
+
+            // 58. Write a C# Sharp program to check two given integers and return the value whichever value is nearest to 13 without going over. Return 0 if both numbers go over
+            Console.WriteLine(Ex58(4, 5));
+            Console.WriteLine(Ex58(7, 12));
+            Console.WriteLine(Ex58(10, 13));
+            Console.WriteLine(Ex58(17, 33));
+            Console.WriteLine(Ex58(17, 33));
+
+            // 59. Write a C# Sharp program to check three given integers (small, medium and large) and return true if the difference between small and medium and the difference between medium and large is same. 
+            Console.WriteLine(Ex59(4, 5, 6));
+            Console.WriteLine(Ex59(7, 12, 13));
+            Console.WriteLine(Ex59(-1, 0, 1));
+
+            // 60. Write a C# Sharp program to create a new string using two given strings s1, s2, the format of the new string will be s1s2s2s1.
+            Console.WriteLine(Ex60("Hi", "Hello"));
+            Console.WriteLine(Ex60("whats", "app"));
+
+            // 61. Write a C# Sharp program to insert a given string into middle of the another given string of length 4.
+            Console.WriteLine(Ex61("[[]]", "Hello"));
+            Console.WriteLine(Ex61("(())", "Hi"));
+
+            // 62. Write a C# Sharp program to create a new string using three copies of the last two character of a given string of length atleast two.
+            Console.WriteLine(Ex62("Hello"));
+            Console.WriteLine(Ex62("Hi"));
+
+            // 63. Write a C# Sharp program to create a new string using first two characters of a given string. If the string length is less than 2 then return the original string.. 
+            Console.WriteLine(Ex63("Hello"));
+            Console.WriteLine(Ex63("Hi"));
+            Console.WriteLine(Ex63("H"));
+            Console.WriteLine(Ex63(" "));
+
+            // 64. Write a C# Sharp program to create a new string of the first half of a given string of even length.
+            Console.WriteLine(Ex64("Hello"));
+            Console.WriteLine(Ex64("Hi"));
+
+            // 65. Write a C# Sharp program to create a new string without the first and last character of a given string of length atleast two.
+            Console.WriteLine(Ex65("Hello"));
+            Console.WriteLine(Ex65("Hi"));
+            Console.WriteLine(Ex65("Python"));
+
+            // 66. Write a C# Sharp program to create a new string from two given string one is shorter and another is longer. The format of the new string will be long string + short string + long string.
+            Console.WriteLine(Ex66("Hello", "Hi"));
+            Console.WriteLine(Ex66("JS", "Python"));
+
+            // 67. Write a C# Sharp program to concat two given string of length atleast 1, after removing their first character.
+            Console.WriteLine(Ex67("Hello", "Hi"));
+            Console.WriteLine(Ex67("JS", "Python"));
+
+            // 68. Write a C# Sharp program to move the first two characters to the end of a given string of length at least two.
+            Console.WriteLine(Ex68("Hello"));
+            Console.WriteLine(Ex68("JS"));
+
+            // 69. Write a C# Sharp program to move the last two characters to the start of a given string of length at least two.
+            Console.WriteLine(Ex69("Hello"));
+            Console.WriteLine(Ex69("JS"));
+
+            // 70. Write a C# Sharp program to create a new string without the first and last character of a given string of any length.
+            Console.WriteLine(Ex70("Hello"));
+            Console.WriteLine(Ex70("JS"));
+            Console.WriteLine(Ex70(""));
+
+            // 71. Write a C# Sharp program to create a new string using the two middle characters of a given string of even length (at least 2).
+            Console.WriteLine(Ex71("Hello"));
+            Console.WriteLine(Ex71("JS"));
+            Console.WriteLine(Ex71("Python"));
+
+            // 72. Write a C# Sharp program to check if a given string ends with "on"
+            Console.WriteLine(Ex72("Hello"));
+            Console.WriteLine(Ex72("Python"));
+            Console.WriteLine(Ex72("on"));
+            Console.WriteLine(Ex72("o"));
+
+            // 73. Write a C# Sharp program to create a new string using the first and last n characters from a given string of length at least n.
+            Console.WriteLine(Ex73("Hello", 1));
+            Console.WriteLine(Ex73("Python", 2));
+            Console.WriteLine(Ex73("on", 1));
+            Console.WriteLine(Ex73("o", 1));
+
+            // 74. Write a C# Sharp program to create a new string of length 2 starting at the given index of a given string.
+            Console.WriteLine(Ex74("Hello", 1));
+            Console.WriteLine(Ex74("Python", 2));
+            Console.WriteLine(Ex74("on", 1));
+
+            // 75. Write a C# Sharp program to create a new string taking 3 characters from the middle of a given string at least 3.
+            Console.WriteLine(Ex75("Hello"));
+            Console.WriteLine(Ex75("Python"));
+            Console.WriteLine(Ex75("abc"));
+
+            // 76. Write a C# Sharp program to create a new string of length 2, using first two characters of a given string. 
+            // If the given string length is less than 2 use '#' as missing characters.
+            Console.WriteLine(Ex76("Hello"));
+            Console.WriteLine(Ex76("Python"));
+            Console.WriteLine(Ex76("a"));
+            Console.WriteLine(Ex76(""));
+
+            // 77. Write a C# Sharp program to create a new string taking the first character from a given string and the last character from another given string. 
+            // If the length of any given string is 0, use '#' as its missing character.
+            Console.WriteLine(Ex77("Hello", "Hi"));
+            Console.WriteLine(Ex77("Python", "PHP"));
+            Console.WriteLine(Ex77("JS", "JS"));
+            Console.WriteLine(Ex77("Csharp", ""));
+
+            // 78. Write a C# Sharp program to concat two given strings. If there are any double character in new string then omit one character.
+            Console.WriteLine(Ex78("Hello", "Hi"));
+            Console.WriteLine(Ex78("Python", "PHP"));
+            Console.WriteLine(Ex78("PHP", "PHP"));
+
+            // 79. Write a C# Sharp program to create a new string from a given string after swapping last two characters.
+            Console.WriteLine(Ex79("Hello"));
+            Console.WriteLine(Ex79("Python"));
+            Console.WriteLine(Ex79("PHP"));
+            Console.WriteLine(Ex79("JS"));
+            Console.WriteLine(Ex79("C"));
+
+            // 80. Write a C# Sharp program to check if a given string begins with 'abc' or 'xyz'. 
+            // If the string begins with 'abc' or 'xyz' return 'abc' or 'xyz' otherwise return the empty string.
+            Console.WriteLine(Ex80("abc"));
+            Console.WriteLine(Ex80("abcdef"));
+            Console.WriteLine(Ex80("C"));
+            Console.WriteLine(Ex80("xyz"));
+            Console.WriteLine(Ex80("xyzsder"));
+
+            // 81. Write a C# Sharp program to check whether the first two characters and last two characters of a given string are same.
+            Console.WriteLine(Ex81("abab"));
+            Console.WriteLine(Ex81("abcdef"));
+            Console.WriteLine(Ex81("xyzsderxy"));
+
+            // 82.Write a C# Sharp program to concat two given strings. If the given strings have different length remove the characters from the longer string.
+            Console.WriteLine(Ex82("abc", "abcd"));
+            Console.WriteLine(Ex82("Python", "Python"));
+            Console.WriteLine(Ex82("JS", "Python"));
+
+            // 83. Write a C# Sharp program to create a new string using 3 copies of the first 2 characters of a given string. If the length of the given string is less than 2 use the whole string.
+            Console.WriteLine(Ex83("abc"));
+            Console.WriteLine(Ex83("Python"));
+            Console.WriteLine(Ex83("J"));
+
+            // 84. Write a C# Sharp program to create a new string from a given string. If the two characters of the given string from its beginning and end are same return the given string without 
+            // the first two characters otherwise return the original string.
+            Console.WriteLine(Ex84("abcab"));
+            Console.WriteLine(Ex84("Python"));
+
+            // 85. Write a C# Sharp program to create a new string from a given string without the first two characters. Keep the first character if it is "p" and keep the second character if it is "y".
+            Console.WriteLine(Ex85("abcab"));
+            Console.WriteLine(Ex85("python"));
+            Console.WriteLine(Ex85("press"));
+            Console.WriteLine(Ex85("jython"));
+
+            // 86. Write a C# Sharp program to create a new string from a given string without the first and last character if the first or last characters are 'a' otherwise return the original given string.
+            Console.WriteLine(Ex86("abcab"));
+            Console.WriteLine(Ex86("python"));
+            Console.WriteLine(Ex86("abcda"));
+            Console.WriteLine(Ex86("jython"));
+
+            // 87. Write a C# Sharp program to create a new string from a given string. If the first or first two characters is 'a', return the string without those 'a' characters otherwise return the original given string.
+            Console.WriteLine(Ex87("abcab"));
+            Console.WriteLine(Ex87("python"));
+            Console.WriteLine(Ex87("aacda"));
+            Console.WriteLine(Ex87("jython"));
+
+            // 88. Write a C# Sharp program to check a given array of integers of length 1 or more and return true if 10 appears as either first or last element in the given array.
+            Console.WriteLine(Ex88(new[] { 10, 20, 40, 50 }));
+            Console.WriteLine(Ex88(new[] { 5, 20, 40, 10 }));
+            Console.WriteLine(Ex88(new[] { 10, 20, 40, 10 }));
+            Console.WriteLine(Ex88(new[] { 12, 24, 35, 55 }));
+
+            // 89. Write a C# Sharp program to check a given array of integers of length 1 or more and return true if the first element and the last element are equal in the given array.
+            Console.WriteLine(Ex89(new[] { 10, 20, 40, 50 }));
+            Console.WriteLine(Ex89(new[] { 10, 20, 40, 10 }));
+            Console.WriteLine(Ex89(new[] { 12, 24, 35, 55 }));
+
+            // 90. Write a C# Sharp program to check two given arrays of integers of length 1 or more and return true if they have the same first element or they have the same last element.
+            Console.WriteLine(Ex90(new[] { 10, 20, 40, 50 }, new[] { 10, 20, 40, 50 }));
+            Console.WriteLine(Ex90(new[] { 10, 20, 40, 50 }, new[] { 10, 20, 40, 5 }));
+            Console.WriteLine(Ex90(new[] { 10, 20, 40, 50 }, new[] { 1, 20, 40, 5 }));
+
+            // 91. Write a C# Sharp program to compute the sum of the elements of an given array of integers.
+            Console.WriteLine(Ex91(new[] { 10, 20, 30, 40, 50 }));
+            Console.WriteLine(Ex91(new[] { 10, 20, -30, -40, 50 }));
+
+            // 92. Write a C# Sharp program to rotate the elements of a given array of integers (length 4 ) in left direction and return the new array.
+            int[] item = Ex92(new[] { 10, 20, -30, -40 });
+            Console.Write("Rotated array: ");
+            foreach (var i in item) Console.Write(i.ToString() + " ");
+
+            // 93. Write a C# Sharp program to reverse a given array of integers and length 4.
+            int[] a = Ex93(new[] { 10, 20, -30, -40, 50 });
+            Console.Write("Reverse array: ");
+            foreach (var i in a) Console.Write(i.ToString() + " ");
 
             // 94. Write a C# Sharp program to find out the maximum element between the first or last element in a given array of integers ( length 4), replace all elements with maximum element.
-            int[] item = Ex94(new[] { 10, 20, -30, -40 });
+            int[] b = Ex94(new[] { 10, 20, -30, -40 });
             Console.Write("New array: ");
-            foreach (var i in item) Console.Write(i.ToString() + " ");
+            foreach (var i in b) Console.Write(i.ToString() + " ");
+
+            // 95. Write a C# Sharp program to create a new array containing the middle elements from the two given arrays of integers, each length 5.
+            int[] c = Ex95(new[] { 10, 20, -30, -40, 30 }, new[] { 10, 20, 30, 40, 30 });
+            Console.Write("New array: ");
+            foreach (var i in c) Console.Write(i.ToString() + " ");
+
+            // 96. Write a C# Sharp program to create a new array taking  the first and last elements of a given array of integers and length 1 or more.
+            int[] d = Ex96(new[] { 10, 20, -30, -40, 30 });
+            Console.Write("New array: ");
+            foreach (var i in d) Console.Write(i.ToString() + " ");
+
+            // 97. Write a C# Sharp program to check if a given array of integers and length 2, contains 15 or 20.
+            Console.WriteLine(Ex97(new[] { 12, 20 }));
+            Console.WriteLine(Ex97(new[] { 14, 15 }));
+            Console.WriteLine(Ex97(new[] { 11, 21 }));
+
+            // 98. Write a C# Sharp program to check if a given array of integers and length 2, does not contain 15 or 20.
+            Console.WriteLine(Ex98(new[] { 12, 20 }));
+            Console.WriteLine(Ex98(new[] { 14, 15 }));
+            Console.WriteLine(Ex98(new[] { 11, 21 }));
+
+            // 99. Write a C# Sharp program to create a new array of integers and length 1 or more. The length of the new array will be double length
+            // of the given array and all the elements are 1 except the first element which is equal to the given array.
+            int[] e = Ex99(new[] { 10, 20, -30, -40, 30 });
+            Console.Write("New array: ");
+            foreach (var i in e) Console.Write(i.ToString() + " ");
+
+            // 100. Write a C# Sharp program to check a given array of integers and return true if the array contains 10 or 20 twice. 
+            // The length of the array will be 0, 1, or 2.
+            Console.WriteLine(Ex100(new[] { 12, 20 }));
+            Console.WriteLine(Ex100(new[] { 20, 20 }));
+            Console.WriteLine(Ex100(new[] { 10, 10 }));
+            Console.WriteLine(Ex100(new[] { 10 }));
+
+            // 101. Write a C# Sharp program to check a given array of integers, length 3 and create a new array. 
+            // If there is a 5 in the given array immediately followed by a 7 then set 7 to 1.
+            int[] f = Ex101(new[] { 1, 5, 7 });
+            Console.Write("New array: ");
+            foreach (var i in f) Console.Write(i.ToString() + " ");
+
+            // 102. Write a C# Sharp program to compute the sum of the two given arrays of integers, length 3 and find the array which has the largest sum.
+            int[] g = Ex102(new[] { 10, 20, -30 }, new[] { 10, 20, 30 });
+            Console.Write("Larger array: ");
+            foreach (var i in g) Console.Write(i.ToString() + " ");
+
+            // 103. Write a C# Sharp program to create an array taking two middle elements from a given array of integers of length even.
+            int[] h = Ex103(new[] { 1, 5, 7, 9, 11, 13 });
+            Console.Write("New array: ");
+            foreach (var i in h) Console.Write(i.ToString() + " ");
+
+            // 104. Write a C# Sharp program to create a new array from two give array of integers, each length 3.
+            int[] j = Ex104(new[] { 10, 20, 30 }, new[] { 40, 50, 60 });
+            Console.Write("New array: ");
+            foreach (var i in j) Console.Write(i.ToString() + " ");
+
+            // 105. Write a C# Sharp program to create a new array swapping the first and last elements of a given array of integers and length will be least 1.
+            int[] k = Ex105(new[] { 1, 5, 7, 9, 11, 13 });
+            Console.Write("After swapping first and last elements: ");
+            foreach (var i in k) Console.Write(i.ToString() + " ");
+
 
 
 
@@ -528,7 +586,7 @@ namespace BasicAlgorithms
 
         private static int Ex1(int n1, int n2)
         {
-            return n1 == n2? (n1 + n2) * 3: n1 + n2;
+            return n1 == n2 ? (n1 + n2) * 3 : n1 + n2;
         }
         private static int Ex2(int n)
         {
@@ -550,7 +608,7 @@ namespace BasicAlgorithms
         }
         private static string Ex6(string yourString, int position)
         {
-            return yourString.Remove(position,1);
+            return yourString.Remove(position, 1);
         }
         private static string Ex7(string yourString)
         {
@@ -585,13 +643,13 @@ namespace BasicAlgorithms
         public static bool Ex10(int n)
         {
             if (n < 3) return false;
-            return n % 3 == 0 || n % 7 == 0 ? true: false;
+            return n % 3 == 0 || n % 7 == 0 ? true : false;
         }
         private static string Ex11(string yourString)
         {
             int size = 3;
             StringBuilder retVal = new StringBuilder();
-            if ( yourString.Length < size) for (int i = 0; i < 2; i++) retVal.Append(yourString);
+            if (yourString.Length < size) for (int i = 0; i < 2; i++) retVal.Append(yourString);
             else
             {
                 string letters = yourString.Substring(0, size);
@@ -601,7 +659,7 @@ namespace BasicAlgorithms
             }
             return retVal.ToString();
         }
-        private static bool Ex12(string yourString,string startsWith = "C#")
+        private static bool Ex12(string yourString, string startsWith = "C#")
         {
             return yourString.ToLower().StartsWith(startsWith.ToLower()) ? true : false;
         }
@@ -700,7 +758,7 @@ namespace BasicAlgorithms
         {
             int length = yourString.Length;
             StringBuilder retVal = new StringBuilder();
-            for (int i = 0; i < length; i+=2) retVal.Append(yourString.Substring(i, 1));
+            for (int i = 0; i < length; i += 2) retVal.Append(yourString.Substring(i, 1));
             return retVal.ToString();
         }
         private static string Ex30(string yourString)
@@ -709,7 +767,7 @@ namespace BasicAlgorithms
             StringBuilder retVal = new StringBuilder();
             for (int i = 0; i < length; i++)
             {
-                retVal.Append(yourString.Substring(0, i+1));
+                retVal.Append(yourString.Substring(0, i + 1));
             }
             return retVal.ToString();
         }
@@ -785,7 +843,7 @@ namespace BasicAlgorithms
         private static bool Ex41(int n1, int n2)
         {
             int n = 5;
-            return n1 == n || n2 == n|| n1 + n2 == n || Math.Abs(n1 - n2) == n;
+            return n1 == n || n2 == n || n1 + n2 == n || Math.Abs(n1 - n2) == n;
         }
         private static bool Ex42(int n)
         {
@@ -917,11 +975,11 @@ namespace BasicAlgorithms
         }
         private static string Ex63(string s)
         {
-            return s.Length < 2 ? s : s.Substring(0,2);
+            return s.Length < 2 ? s : s.Substring(0, 2);
         }
         private static string Ex64(string s)
         {
-            return s.Length % 2 != 0 ? s : s.Substring(0,s.Length / 2);
+            return s.Length % 2 != 0 ? s : s.Substring(0, s.Length / 2);
         }
         private static string Ex65(string s)
         {
@@ -963,16 +1021,16 @@ namespace BasicAlgorithms
         }
         private static string Ex74(string s, int n)
         {
-            return n + 2 <= s.Length ? s.Substring(n, 2) : s.Substring(0,2) ;
+            return n + 2 <= s.Length ? s.Substring(n, 2) : s.Substring(0, 2);
         }
         private static string Ex75(string s)
         {
             return s.Length < 4 ? s
-                : s.Substring((s.Length - 1)/ 2 - 1, 3);
+                : s.Substring((s.Length - 1) / 2 - 1, 3);
         }
         private static string Ex76(string s)
         {
-            return s.Length > 2 ? s.Substring(0, 2): s + "##".Substring(0, 2 - s.Length);
+            return s.Length > 2 ? s.Substring(0, 2) : s + "##".Substring(0, 2 - s.Length);
         }
         private static string Ex77(string s1, string s2)
         {
@@ -1005,11 +1063,11 @@ namespace BasicAlgorithms
         {
             if (s1.Length < s2.Length) return s1 + s2.Substring(s2.Length - s1.Length);
             return s1.Length > s2.Length ? s1.Substring(s1.Length - s2.Length) + s2 : s1 + s2;
-            
+
         }
         private static string Ex83(string s)
         {
-            return s.Length < 2 ? s+s+s : s.Substring(0, 2) + s.Substring(0, 2) + s.Substring(0, 2);
+            return s.Length < 2 ? s + s + s : s.Substring(0, 2) + s.Substring(0, 2) + s.Substring(0, 2);
         }
         private static string Ex84(string s)
         {
@@ -1072,6 +1130,59 @@ namespace BasicAlgorithms
             int n = retVal[x.Length - 1];
             for (int i = 0; i < retVal.Length - 1; i++) retVal[i] = n;
             return retVal;
+        }
+        private static int[] Ex95(int[] x, int[] y)
+        {
+            return new int[] { x[2], y[2] };
+        }
+        private static int[] Ex96(int[] x)
+        {
+            return x.Length > 1 ? new int[] { x[0], x[x.Length - 1] } : x;
+        }
+        private static bool Ex97(int[] x)
+        {
+            return x.Contains(15) || x.Contains(20);
+        }
+        private static bool Ex98(int[] x)
+        {
+            return !x.Contains(15) && !x.Contains(20);
+        }
+        private static int[] Ex99(int[] x)
+        {
+            int[] retVal = new int[x.Length * 2];
+            retVal[0] = x[0];
+            return retVal;
+        }
+        private static bool Ex100(int[] x)
+        {
+            int[] lower = x.Where(n => n == 10).Select(n => n).ToArray();
+            int[] upper = x.Where(n => n == 20).Select(n => n).ToArray();
+            return lower.Count() == 2 || upper.Count() == 2;
+        }
+        private static int[] Ex101(int[] x)
+        {
+            int[] retVal = x;
+            for (int i = 0; i < x.Length - 1; i++) if (x[i] == 5 && x[i + 1] == 7) retVal[i + 1] = 1;
+            return retVal;
+        }
+        private static int[] Ex102(int[] x, int[] y)
+        {
+            return x.Sum() > y.Sum() ? x : y;
+        }
+        private static int[] Ex103(int[] x)
+        {
+            return new int[] { x[x.Length / 2 - 1], x[x.Length / 2] };
+        }
+        private static int[] Ex104(int[] x, int[] y)
+        {
+            return new int[] { x[0], x[1], x[2], y[0], y[1], y[2] };
+        }
+        private static int[] Ex105(int[] x)
+        {
+            int first = x[0];
+            x[0] = x[x.Length - 1];
+            x[x.Length - 1] = first;
+            return x;
         }
     }
 }
