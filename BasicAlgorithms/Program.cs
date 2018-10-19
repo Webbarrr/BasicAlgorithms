@@ -620,6 +620,60 @@ namespace BasicAlgorithms
             Console.WriteLine(Ex114(new[] { 1, 4, 7, 9, 10, 17 }));
             Console.WriteLine(Ex114(new[] { 1, 1, 2, 9, 10, 17 }));
 
+            // 115. Write a C# Sharp program to check if the sum of all 5's in the array exactly 15 in a given array of integers. 
+            Console.WriteLine(Ex115(new[] { 1, 5, 6, 9, 10, 17 }));
+            Console.WriteLine(Ex115(new[] { 1, 5, 5, 5, 10, 17 }));
+            Console.WriteLine(Ex115(new[] { 1, 1, 5, 5, 5, 5 }));
+
+            // 116. Write a C# Sharp program to check if the number of 3's is greater than the number of 5's
+            Console.WriteLine(Ex116(new[] { 1, 5, 6, 9, 3, 3 }));
+            Console.WriteLine(Ex116(new[] { 1, 5, 5, 5, 10, 17 }));
+            Console.WriteLine(Ex116(new[] { 1, 3, 3, 5, 5, 5 }));
+
+            // 117. Write a C# Sharp program to check if a given array of integers contains a 3 or a 5.
+            Console.WriteLine(Ex117(new[] { 5, 5, 5, 5, 5 }));
+            Console.WriteLine(Ex117(new[] { 3, 3, 3, 3 }));
+            Console.WriteLine(Ex117(new[] { 3, 3, 3, 5, 5, 5 }));
+            Console.WriteLine(Ex117(new[] { 1, 6, 8, 10 }));
+
+            // 118. Write a C# Sharp program to check if a given array of integers contains no 3 or a 5.
+            Console.WriteLine(Ex118(new[] { 5, 5, 5, 5, 5 }));
+            Console.WriteLine(Ex118(new[] { 3, 3, 3, 3 }));
+            Console.WriteLine(Ex118(new[] { 3, 3, 3, 5, 5, 5 }));
+            Console.WriteLine(Ex118(new[] { 1, 6, 8, 10 }));
+
+            // 119. Write a C# Sharp program to check if an array of integers contains a 3 next to a 3 or a 5 next to a 5 or both. 
+            Console.WriteLine(Ex119(new[] { 5, 5, 5, 5, 5 }));
+            Console.WriteLine(Ex119(new[] { 1, 2, 3, 4 }));
+            Console.WriteLine(Ex119(new[] { 3, 3, 5, 5, 5, 5 }));
+            Console.WriteLine(Ex119(new[] { 1, 5, 5, 7, 8, 10 }));
+
+            // 120. Write a C# Sharp program to check a given array of integers and return true if the given array contains two 5's next to each other
+            // , or two  5 separated by one element.
+            Console.WriteLine(Ex120(new[] { 5, 5, 1, 5, 5 }));
+            Console.WriteLine(Ex120(new[] { 1, 2, 3, 4 }));
+            Console.WriteLine(Ex120(new[] { 3, 3, 5, 5, 5, 5 }));
+            Console.WriteLine(Ex120(new[] { 1, 5, 5, 7, 8, 10 }));
+            Console.WriteLine(Ex120(new[] { 1, 2, 5, 6, 5 }));
+
+            // 121. Write a C# Sharp program to check a given array of integers and return true if there is a 3 with a 5 somewhere later in the given array.
+            Console.WriteLine(Ex121(new[] { 3, 5, 1, 3, 7 }));
+            Console.WriteLine(Ex121(new[] { 1, 2, 3, 4 }));
+            Console.WriteLine(Ex121(new[] { 3, 3, 5, 5, 5, 5 }));
+            Console.WriteLine(Ex121(new[] { 2, 5, 5, 7, 8, 10 }));
+
+            // 122. Write a C# Sharp program to check a given array of integers and return true if the given array contains either 2 even or 2 odd values all next to each other.
+            Console.WriteLine(Ex122(new[] { 3, 5, 1, 3, 7 }));
+            Console.WriteLine(Ex122(new[] { 1, 2, 3, 4 }));
+            Console.WriteLine(Ex122(new[] { 3, 3, 5, 5, 5, 5 }));
+            Console.WriteLine(Ex122(new[] { 2, 4, 5, 6 }));
+
+            // 123. Write a C# Sharp program to check a given array of integers and return true if the value 5 appears 5 times and there are no 5 next to each other.
+            Console.WriteLine(Ex123(new[] { 3, 5, 1, 5, 3, 5, 7, 5, 1, 5 }));
+            Console.WriteLine(Ex123(new[] { 3, 5, 5, 5, 5, 5, 5 }));
+            Console.WriteLine(Ex123(new[] { 3, 5, 2, 5, 4, 5, 7, 5, 8, 5 }));
+            Console.WriteLine(Ex123(new[] { 2, 4, 5, 5, 5, 5 }));
+            //Console.WriteLine(Ex123(new[] { 2, 5, 2, 5, 2, 5, 2, 5 }));
 
 
 
@@ -1274,6 +1328,48 @@ namespace BasicAlgorithms
         private static bool Ex114(int[] x)
         {
             return x.Where(n => n == 5).ToArray().Count() > 0 || x.Where(n => n == 7).ToArray().Count() > 0;
+        }
+        private static bool Ex115(int[] nums)
+        {
+            return nums.Where(n => n == 5).ToArray().Sum() == 15;
+        }
+        private static bool Ex116(int[] nums)
+        {
+            return nums.Where(n => n == 3).ToArray().Sum() > nums.Where(n => n == 5).ToArray().Sum();
+        }
+        private static bool Ex117(int[] nums)
+        {
+            return nums.Contains(3) || nums.Contains(5);
+        }
+        private static bool Ex118(int[] nums)
+        {
+            return !(nums.Contains(3) && nums.Contains(5));
+        }
+        private static bool Ex119(int[] nums)
+        {
+            for (int i = 0; i < nums.Length - 1; i++) if ((nums[i] == 3 && nums[i + 1] == 3) || (nums[i] == 5 && nums[i] == 5)) return true;
+            return false;
+        }
+        private static bool Ex120(int[] nums)
+        {
+            for (int i = 0; i < nums.Length - 1; i++) if ((nums[i] == 5 && nums[i + 1] == 5) || (nums[i] == 5 && nums[i + 2] == 5)) return true;
+            return false;
+        }
+        private static bool Ex121(int[] nums)
+        {
+            return (nums.Contains(3) && nums.Contains(5));
+
+        }
+        private static bool Ex122(int[] nums)
+        {
+            for (int i = 0; i < nums.Length - 1; i++) if ((nums[i] % 2 == 0 && nums[i + 1] % 2 == 0) || (nums[i] % 2 != 0) && nums[i + 1] % 2 != 0) return true;
+            return false;
+        }
+        private static bool Ex123(int[] nums)
+        {
+            if (nums.Where(n => n == 5).Sum() < 25) return false;
+            for (int i = 0; i < nums.Length - 1; i++) if (nums[i] == 5 && nums[i + 1] == 5) return false;
+            return true;
         }
     }
 }
