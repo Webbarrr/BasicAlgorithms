@@ -578,6 +578,48 @@ namespace BasicAlgorithms
             Console.Write("After swapping first and last elements: ");
             foreach (var i in k) Console.Write(i.ToString() + " ");
 
+            // 106. Write a C# Sharp program to create a new array length 3 from a given array (length atleast 3) using the elements from the middle of the array. 
+            int[] l = Ex106(new[] { 1, 5, 7, 9, 11, 13 });
+            Console.Write("New array: ");
+            foreach (var i in l) Console.Write(i.ToString() + " ");
+
+            // 107. Write a C# Sharp program to find the largest value from first, last, and middle elements of a given array of integers of odd length (atleast 1).
+            Console.WriteLine(Ex107(new[] { 1 }));
+            Console.WriteLine(Ex107(new[] { 1, 2, 9 }));
+            Console.WriteLine(Ex107(new[] { 1, 2, 9, 3, 3 }));
+            Console.WriteLine(Ex107(new[] { 1, 2, 3, 4, 5, 6, 7 }));
+            Console.WriteLine(Ex107(new[] { 1, 2, 2, 3, 7, 8, 9, 10, 6, 5, 4 }));
+
+            // 108. Write a C# Sharp program to create a new array taking the first two elements from a given array. If the length of the given array is less than 2 then return the given array.
+            int[] m = Ex108(new[] { 1, 5, 7, 9, 11, 13 });
+            Console.Write("New array: ");
+            foreach (var i in m) Console.Write(i.ToString() + " ");
+
+            // 109. Write a C# Sharp program to count even number of elements in a given array of integers.
+            Console.WriteLine(Ex109(new[] { 1, 5, 7, 9, 10, 12 }));
+
+            // 110. Write a C# Sharp program to compute the difference between the largest and smallest values in a given array of integers and length one or more.
+            Console.WriteLine("Difference between the largest and smallest values: ");
+            Console.WriteLine(Ex110(new[] { 1, 5, 7, 9, 10, 12 }));
+
+            // 111. Write a C# Sharp program to compute the sum of values in a given array of integers except the number 17. Return 0 if the given array has no integer.
+            Console.WriteLine("Sum of values in the array of integers except the number 17: ");
+            Console.WriteLine(Ex111(new[] { 1, 5, 7, 9, 10, 17 }));
+
+            // 112. Write a C# Sharp program to compute the sum of the numbers in a given array except those numbers starting with 5 followed by atleast one 6. Return 0 if the given array has no integer.
+            Console.WriteLine("Sum of the numbers of the said array except those numbers starting with 5 followed by atleast one 6: ");
+            Console.WriteLine(Ex112(new[] { 1, 5, 6, 9, 10, 17 }));
+
+            // 113. Write a C# Sharp program to check if a given array of integers contains 5 next to a 5 somewhere.
+            Console.WriteLine(Ex113(new[] { 1, 5, 6, 9, 10, 17 }));
+            Console.WriteLine(Ex113(new[] { 1, 5, 5, 9, 10, 17 }));
+            //Console.WriteLine(Ex113(new[] { 1, 5, 5, 9, 10, 17, 5, 5 }));
+
+            // 114. Write a C# Sharp program to check whether a given array of integers contains 5's and 7's.
+            Console.WriteLine(Ex114(new[] { 1, 5, 6, 9, 10, 17 }));
+            Console.WriteLine(Ex114(new[] { 1, 4, 7, 9, 10, 17 }));
+            Console.WriteLine(Ex114(new[] { 1, 1, 2, 9, 10, 17 }));
+
 
 
 
@@ -1183,6 +1225,55 @@ namespace BasicAlgorithms
             x[0] = x[x.Length - 1];
             x[x.Length - 1] = first;
             return x;
+        }
+        private static int[] Ex106(int[] x)
+        {
+            if (x.Length < 3) return x;
+            int n = x.Length / 3;
+            return new int[] { x[n], x[n + 1], x[n + 2] };
+        }
+        private static int Ex107(int[] x)
+        {
+            return Math.Max(Math.Max(x[x.Length / 2], x[x.Length - 1]), x[0]);
+        }
+        private static int[] Ex108(int[] x)
+        {
+            return x.Length < 2 ? x : new int[] { x[0], x[1] };
+        }
+        private static int Ex109(int[] x)
+        {
+            int retVal = 0;
+            foreach (int item in x) if (item % 2 == 0) retVal++;
+            return retVal;
+        }
+        private static int Ex110(int[] x)
+        {
+            return x.Length < 1 ? x[0] : x.Max() - x.Min();
+        }
+        private static int Ex111(int[] x)
+        {
+            return x.Where(n => n != 17).Sum();
+        }
+        private static int Ex112(int[] x)
+        {
+            int retVal = 0;
+            bool flag = false;
+            for (int i = 0; i < x.Length; i++)
+            {
+                if (x[i].ToString().Contains("5")) flag = true;
+                else if (flag && x[i] == 6) flag = false;
+                else if (!flag) retVal += x[i];
+            }
+            return retVal;
+        }
+        private static bool Ex113(int[] x)
+        {
+            for (int i = 0; i < x.Length; i++) if (x[i].ToString().Contains("5") && x[i + 1] == 5) return true;
+            return false;
+        }
+        private static bool Ex114(int[] x)
+        {
+            return x.Where(n => n == 5).ToArray().Count() > 0 || x.Where(n => n == 7).ToArray().Count() > 0;
         }
     }
 }
