@@ -689,7 +689,76 @@ namespace BasicAlgorithms
             // 126. Write a C# Sharp program to check a given array of integers and return true if the array contains three increasing adjacent numbers.
             Console.WriteLine(Ex126(new[] { 1, 2, 3, 5, 3, 7 }));
             Console.WriteLine(Ex126(new[] { 3, 7, 5, 5, 3, 7 }));
-            //Console.WriteLine(Ex126(new[] { 3, 7, 5, 5, 6, 7, 5 }));
+            Console.WriteLine(Ex126(new[] { 3, 7, 5, 5, 6, 7, 5 }));
+
+            // 127. Write a C# Sharp program to shift an element in left direction and return a new array.
+            int[] n = Ex127(new[] { 10, 20, -30, -40, 50 });
+            Console.Write("New array: ");
+            foreach (var i in n)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 128. Write a C# Sharp program to create a new array taking the elements before the element value 5 from a given array of integers.
+            int[] o = Ex128(new[] { 1, 2, 3, 5, 7 });
+            Console.Write("New array: ");
+            foreach (var i in o)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 129. Write a C# Sharp program to create a new array taking the elements after the element value 5 from a given array of integers.
+            int[] p = Ex129(new[] { 1, 2, 3, 5, 7, 9, 11 });
+            Console.Write("New array: ");
+            foreach (var i in p)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 130. Write a C# Sharp program to create a new array from a given array of integers shifting all zeros to left direction.
+            int[] q = Ex130(new[] { 1, 2, 0, 3, 5, 7, 0, 9, 11 });
+            Console.Write("New array: ");
+            foreach (var i in q)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 131. Write a C# Sharp program to create a new array after replacing all the values 5 with 0 shifting all zeros to right direction.
+            int[] r = Ex131(new[] { 1, 2, 5, 3, 5, 7, 5, 9, 11 });
+            Console.Write("New array: ");
+            foreach (var i in r)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 132. Write a C# Sharp program to create new array from a given array of integers shifting all even numbers before all odd numbers.
+            int[] s = Ex132(new[] { 1, 2, 5, 3, 5, 4, 6, 9, 11 });
+            Console.Write("New array: ");
+            foreach (var i in s)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 133. Write a C# Sharp program to check if the value of each element is equal or greater than the value of previous element of a given array of integers.
+            Console.WriteLine(Ex133(new[] { 5, 5, 1, 5, 5 }));
+            Console.WriteLine(Ex133(new[] { 1, 2, 3, 4 }));
+            Console.WriteLine(Ex133(new[] { 3, 3, 5, 5, 5, 5 }));
+            Console.WriteLine(Ex133(new[] { 1, 5, 5, 7, 8, 10 }));
+
+            // 134. Write a C# Sharp program to check a given array (length will be atleast 2) of integers and return true if there are two values 15, 15 next to each other.
+            Console.WriteLine(Ex134(new[] { 5, 5, 1, 15, 15 }));
+            Console.WriteLine(Ex134(new[] { 15, 2, 3, 4, 15 }));
+            Console.WriteLine(Ex134(new[] { 3, 3, 15, 15, 5, 5 }));
+            Console.WriteLine(Ex134(new[] { 1, 5, 15, 7, 8, 15 }));
+            Console.WriteLine(Ex134(new[] { 1, 2, 3 }));
+
+            // 135. Write a C# Sharp program to find the larger average value between the first and the second half of a given array of integers and minimum length is atleast 2. 
+            // Assume that the second half begins at index (array length)/2. 
+            Console.WriteLine(Ex135(new[] { 1, 2, 3, 4, 6, 8 }));
+            Console.WriteLine(Ex135(new[] { 15, 2, 3, 4, 15, 11 }));
+
+            // 136. Write a C# Sharp program to count the number of strings with given length in given array of strings.
+            Console.WriteLine(Ex136(new[] { "a", "b", "bb", "c", "ccc" }, 1));
 
 
 
@@ -1418,6 +1487,88 @@ namespace BasicAlgorithms
                 if (nums[i] == nums[i + 1] - 1 && nums[i] == nums[i + 2] - 2) return true;
             }
             return false;
+        }
+        private static int[] Ex127(int[] nums)
+        {
+            int[] retVal = nums.Skip(1).ToArray();
+            Array.Resize(ref retVal, nums.Length);
+            retVal[nums.Length - 1] = nums[0];
+            return retVal;
+        }
+        private static int[] Ex128(int[] nums)
+        {
+            int index = Array.IndexOf(nums, 5);
+            return nums.Take(index).ToArray();
+        }
+        private static int[] Ex129(int[] nums)
+        {
+            int index = Array.IndexOf(nums, 5) +1;
+            return nums.Skip(index).ToArray();
+        }
+        private static int[] Ex130(int[] nums)
+        {
+            int position = 0, length = nums.Length;
+            for (int i = 0; i < length; i++)
+            {
+                if (nums[i] == 0)
+                {
+                    nums[i] = nums[position];
+                    nums[position++] = 0;
+                }
+            }
+            return nums;
+        }
+        private static int[] Ex131(int[] nums)
+        {
+            int length = nums.Length, ctr = 0;
+            int[] retVal = new int[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                if (nums[i] != 5) retVal[ctr++] = nums[i];
+            }
+
+            return retVal;
+        }
+        private static int[] Ex132_old(int[] nums)
+        {
+            return nums.OrderByDescending(n => n % 2 == 0).ToArray();
+        }
+        private static int[] Ex132(int[] nums)
+        {
+            int length = nums.Length, tmp = 0, position = 0;
+            int[] retVal = new int[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                if (nums[i] % 2 == 0)
+                {
+                    tmp = nums[position];
+                    nums[position] = nums[i];
+                    nums[i] = tmp;
+                    position++;
+                }
+            }
+            return retVal;
+        }
+        private static bool Ex133(int[] nums)
+        {
+            int[] temp = (int[]) nums.Clone();
+            Array.Sort(temp);
+            return nums.SequenceEqual(temp);
+        }
+        private static bool Ex134(int[] nums)
+        {
+            return !nums.Contains(15) ? false : nums[Array.IndexOf(nums, 15) + 1] == 15;
+        }
+        private static int Ex135(int[] nums)
+        {
+            return Math.Max(int.Parse(Math.Round(nums.Take(nums.Length / 2).Average()).ToString())
+                , int.Parse(Math.Round(nums.Skip(nums.Length / 2).Average()).ToString()));
+        }
+        private static int Ex136(string[] words, int length)
+        {
+            return words.Where(w => w.Length == length).Count();
         }
     }
 }
