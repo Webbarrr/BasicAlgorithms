@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -760,9 +762,105 @@ namespace BasicAlgorithms
             // 136. Write a C# Sharp program to count the number of strings with given length in given array of strings.
             Console.WriteLine(Ex136(new[] { "a", "b", "bb", "c", "ccc" }, 1));
 
+            // 137. Write a C# Sharp program to create a new array using the first n strings from a given array of strings. 
+            // (n>=1 and <=length of the array).
+            string[] t = Ex137(new[] { "a", "b", "bb", "c", "ccc" }, 3);
+            Console.Write("New array: ");
+            foreach (var i in t)
+            {
+                Console.Write(i.ToString() + " ");
+            }
 
+            // 138. Write a C# Sharp program to create a new array from a given array of strings using all the strings whose length are matched with given string length.
+            string[] u = Ex138(new[] { "a", "aaa", "b", "bbb", "c", "ccc" }, 3);
+            Console.Write("New array: ");
+            foreach (var i in u)
+            {
+                Console.Write(i.ToString() + " ");
+            }
 
+            // 139. Write a C# Sharp program to check a positive integer and return true if it contains a number 2.
+            Console.WriteLine(Ex139(123));
+            Console.WriteLine(Ex139(13));
+            Console.WriteLine(Ex139(222));
 
+            // 140. Write a C# Sharp program to create a new array of given length using the odd numbers from a given array of positive integers.
+            int[] v = Ex140(new[] { 1, 2, 3, 5, 7, 9, 10 }, 3);
+            Console.Write("New array: ");
+            foreach (var i in v)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 141. Write a C# Sharp program to create a new list from a given list of integers where each element is multiplied by 3.
+            List<int> mylist = Ex141(new List<int>(new int[] { 1, 2, 3, 4 }));
+            foreach (var i in mylist)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 142. Write a C# Sharp program to create a new list from a given list of integers where each integer multiplied by itself three times.
+            List<int> mylist2 = Ex142(new List<int>(new int[] { 1, 2, 3, 4 }));
+            foreach (var i in mylist2)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 143. Write a C# Sharp program to create a new list from a given list of strings where each element has "#" added at the beginning and end position.
+            List<string> mylist3 = Ex143(new List<string>(new string[] { "1", "2", "3", "4" }));
+            foreach (var i in mylist3)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 144. Write a C# Sharp program to create a new list from a given list of strings where each element is replaced by 4 copies of the string concatenated together.
+            List<string> mylist4 = Ex144(new List<string>(new string[] { "1", "2", "3", "4" }));
+            foreach (var i in mylist4)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 145. Write a C# Sharp program to create a new list from a given list of integers where each integer value is added to 2 and the result value is multiplied by 5.
+            List<int> mylist5 = Ex145(new List<int>(new int[] { 1, 2, 3, 4 }));
+            foreach (var i in mylist5)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 146. Write a C# Sharp program to create a new list of the rightmost digits from a given list of positive integers. 
+            List<int> mylist6 = Ex146(new List<int>(new int[] { 10, 22, 35, 41 }));
+            foreach (var i in mylist6)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 147. Write a C# Sharp program to create a new list from a given list of strings where strings will be in upper case in new string.
+            List<string> mylist7 = Ex147(new List<string>(new string[] { "Abc", "cdef", "js", "php" }));
+            foreach (var i in mylist7)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 148. Write a C# Sharp program to remove all "a" in each string in given list of strings and return the new string. 
+            List<string> mylist8 = Ex148(new List<string>(new string[] { "abc", "cdaef", "js", "php" }));
+            foreach (var i in mylist8)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 149. Write a C# Sharp program to create a new list from a given list of integers removing those values which are less than 4.
+            List<int> mylist9 = Ex149(new List<int>(new int[] { 0, -2, 1, 2, 3, 5, 4, 7, 8 }));
+            foreach (var i in mylist9)
+            {
+                Console.Write(i.ToString() + " ");
+            }
+
+            // 150. Write a C# Sharp program to create a new list from a given list of integers removing those values end with 7.
+            List<int> mylist10 = Ex150(new List<int>(new int[] { 10, 22, 35, 47, 53, 67 }));
+            foreach (var i in mylist10)
+            {
+                Console.Write(i.ToString() + " ");
+            }
 
             Console.ReadLine();
         }
@@ -1569,6 +1667,62 @@ namespace BasicAlgorithms
         private static int Ex136(string[] words, int length)
         {
             return words.Where(w => w.Length == length).Count();
+        }
+        private static string[] Ex137(string[] words, int n)
+        {
+            return words.Take(n).ToArray();
+        }
+        private static string[] Ex138(string[] words, int n)
+        {
+            return words.Where(str => str.Length == n).ToArray();
+        }
+        private static bool Ex139(int n)
+        {
+            return n.ToString().Contains("2");
+        }
+        private static int[] Ex140(int[] nums, int length)
+        {
+            return nums.Where(n => n % 2 != 0).Take(length).ToArray();
+        }
+        private static List<int> Ex141(List<int> nums)
+        {
+            return nums.Select(n => n * 3).ToList<int>();
+        }
+        private static List<int> Ex142(List<int> nums)
+        {
+            return nums.Select(n => n * n * n).ToList();
+        }
+        private static List<string> Ex143(List<string> words)
+        {
+            return words.Select(word => "#" + word + "#").ToList();
+        }
+        private static List<string> Ex144(List<string> words)
+        {
+            return words.Select(str => str + str + str + str).ToList();
+        }
+        private static List<int> Ex145(List<int> nums)
+        {
+            return nums.Select(n => (n + 2) * 5).ToList();
+        }
+        private static List<int> Ex146(List<int> nums)
+        {
+            return nums.Select(n => n % 10).ToList();
+        }
+        private static List<string> Ex147(List<string> words)
+        {
+            return words.Select(s => s.ToUpper()).ToList();
+        }
+        private static List<string> Ex148(List<string> words)
+        {
+            return words.Select(s => s.Replace("a", null)).ToList();
+        }
+        private static List<int> Ex149(List<int> nums)
+        {
+            return nums.Where(n => n < 4).ToList();
+        }
+        private static List<int> Ex150(List<int> nums)
+        {
+            return nums.Where(n => n % 10 != 7).ToList();
         }
     }
 }
