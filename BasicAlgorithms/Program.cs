@@ -673,7 +673,25 @@ namespace BasicAlgorithms
             Console.WriteLine(Ex123(new[] { 3, 5, 5, 5, 5, 5, 5 }));
             Console.WriteLine(Ex123(new[] { 3, 5, 2, 5, 4, 5, 7, 5, 8, 5 }));
             Console.WriteLine(Ex123(new[] { 2, 4, 5, 5, 5, 5 }));
-            //Console.WriteLine(Ex123(new[] { 2, 5, 2, 5, 2, 5, 2, 5 }));
+            Console.WriteLine(Ex123(new[] { 2, 5, 2, 5, 2, 5, 2, 5 }));
+
+            // 124. Write a C# Sharp program to check a given array of integers and return true if every 5 that appears in the given array is next to another 5. 
+            Console.WriteLine(Ex124(new[] { 3, 5, 5, 3, 7 }));
+            Console.WriteLine(Ex124(new[] { 3, 5, 5, 4, 1, 5, 7 }));
+            Console.WriteLine(Ex124(new[] { 3, 5, 5, 5, 5, 5 }));
+            Console.WriteLine(Ex124(new[] { 2, 4, 5, 5, 6, 7, 5 }));
+
+            // 125. Write a C# Sharp program to check a given array of integers and return true if the specified number of same elements appears at the start and end of the given array.
+            Console.WriteLine(Ex125(new[] { 3, 7, 5, 5, 3, 7 }, 2));
+            Console.WriteLine(Ex125(new[] { 3, 7, 5, 5, 3, 7 }, 3));
+            Console.WriteLine(Ex125(new[] { 3, 7, 5, 5, 3, 7, 5 }, 3));
+
+            // 126. Write a C# Sharp program to check a given array of integers and return true if the array contains three increasing adjacent numbers.
+            Console.WriteLine(Ex126(new[] { 1, 2, 3, 5, 3, 7 }));
+            Console.WriteLine(Ex126(new[] { 3, 7, 5, 5, 3, 7 }));
+            //Console.WriteLine(Ex126(new[] { 3, 7, 5, 5, 6, 7, 5 }));
+
+
 
 
 
@@ -1370,6 +1388,36 @@ namespace BasicAlgorithms
             if (nums.Where(n => n == 5).Sum() < 25) return false;
             for (int i = 0; i < nums.Length - 1; i++) if (nums[i] == 5 && nums[i + 1] == 5) return false;
             return true;
+        }
+        private static bool Ex124(int[] nums)
+        {
+            int length = nums.Length;
+            bool flag = true;
+
+            for (int i = 0; i < length; i++)
+            {
+                if (nums[i] == 5)
+                {
+                    if ((i > 0 && nums[i - 1] == 5) || (i < length - 1 && nums[i + 1] == 5)) flag = true;
+                    else if (i == length - 1) flag = false;
+                    else return false;
+                }
+            }
+            return flag;
+        }
+        private static bool Ex125(int[] nums, int length)
+        {
+            int[] firstN = (int[])nums.Take(length).ToArray(), lastN = (int[])nums.Skip(nums.Length - length).ToArray();
+            return firstN.SequenceEqual(lastN);
+        }
+        private static bool Ex126(int[] nums)
+        {
+            int length = nums.Length-3;
+            for (int i = 0; i < length; i++)
+            {
+                if (nums[i] == nums[i + 1] - 1 && nums[i] == nums[i + 2] - 2) return true;
+            }
+            return false;
         }
     }
 }
